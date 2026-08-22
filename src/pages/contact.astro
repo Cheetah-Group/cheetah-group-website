@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us">
+  <!-- Page Header -->
+  <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="relative">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">CONTACT US</h1>
+      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-orange-500">Home</a> &gt; Contact Us</p>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14">
+    <div>
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 sm:mb-6 tracking-wide">GET IN TOUCH</h2>
+      <p class="text-slate-500 text-sm sm:text-base mb-8">We are here to help you. Reach out to us for any enquiries or quotation.</p>
+
+      <div class="space-y-6 text-sm sm:text-base">
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center shrink-0">📞</span>
+          <div>
+            <p class="font-semibold text-slate-900">Phone</p>
+            <p class="text-slate-500">+91 12345 67890</p>
+            <p class="text-slate-500">+91 98765 43210</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center shrink-0">✉️</span>
+          <div>
+            <p class="font-semibold text-slate-900">Email</p>
+            <p class="text-slate-500 break-all">info@mechworksolutions.com</p>
+            <p class="text-slate-500 break-all">sales@mechworksolutions.com</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center shrink-0">📍</span>
+          <div>
+            <p class="font-semibold text-slate-900">Address</p>
+            <p class="text-slate-500">123, Industrial Area,<br />City, State - 000000</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center shrink-0">🕒</span>
+          <div>
+            <p class="font-semibold text-slate-900">Working Hours</p>
+            <p class="text-slate-500">Mon - Sat: 9:00 AM - 6:00 PM</p>
+            <p class="text-slate-500">Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="bg-slate-50 border border-slate-100 p-6 sm:p-8 rounded-xl">
+      <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-6">SEND US A MESSAGE</h3>
+
+      <form id="contact-form" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Name</label>
+            <input type="text" id="name" name="name" required class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-orange-500" />
+          </div>
+          <div>
+            <label for="email" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Email</label>
+            <input type="email" id="email" name="email" required class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-orange-500" />
+          </div>
+        </div>
+        <div>
+          <label for="phone" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Phone</label>
+          <input type="text" id="phone" name="phone" class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-orange-500" />
+        </div>
+        <div>
+          <label for="subject" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Subject</label>
+          <input type="text" id="subject" name="subject" class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-orange-500" />
+        </div>
+        <div>
+          <label for="message" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-orange-500"></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded text-sm sm:text-base transition-all">
+          Send Message
+        </button>
+        <p id="form-status" class="text-sm font-medium mt-2 text-center"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Map + Bottom CTA -->
+  <section class="relative">
+    <iframe
+      title="Mechwork Solutions Location"
+      class="w-full h-72 sm:h-96 border-0 grayscale-[20%]"
+      loading="lazy"
+      src="https://www.google.com/maps?q=industrial+area&output=embed">
+    </iframe>
+  </section>
+  <section class="bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-white font-semibold text-center sm:text-left">We look forward to building a long term relationship with you.</p>
+      <a href="/contact" class="whitespace-nowrap bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded transition-all text-sm">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
+    const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!status || !btn) return;
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.textContent = '';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        status.textContent = data.message;
+        status.className = res.ok ? 'text-sm font-medium mt-2 text-center text-green-600' : 'text-sm font-medium mt-2 text-center text-red-600';
+        if (res.ok) form.reset();
+      } catch (err) {
+        status.textContent = 'Something went wrong. Please try again.';
+        status.className = 'text-sm font-medium mt-2 text-center text-red-600';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</Layout>

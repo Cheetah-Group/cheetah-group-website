@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const journey = [
+  { year: "2014", label: "Company Founded" },
+  { year: "2016", label: "Expanded Workforce" },
+  { year: "2018", label: "More Industrial Projects" },
+  { year: "2020", label: "Added Security Services" },
+  { year: "2022", label: "500+ Happy Clients" },
+  { year: "2024", label: "Continuing Excellence" },
+];
+
+const whyChooseUs = [
+  { title: "Advanced Infrastructure", icon: "🏗️" },
+  { title: "Skilled & Trained Workforce", icon: "👷" },
+  { title: "Timely Project Completion", icon: "⏱️" },
+  { title: "Competitive Pricing", icon: "💰" },
+  { title: "Strong Client Relationship", icon: "🤝" },
+];
+---
+
+<Layout title="About Us">
+  <!-- Page Header -->
+  <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="relative">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">ABOUT US</h1>
+      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-orange-500">Home</a> &gt; About Us</p>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-10 sm:gap-12 items-center mb-16 sm:mb-20">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-orange-500 mb-4 tracking-wide">WHO WE ARE</h2>
+        <p class="text-slate-600 leading-relaxed mb-4 text-sm sm:text-base">
+          Cheetah Solutions is a trusted name in the mechanical piece work industry and manpower supply services. With years of experience, we are committed to delivering high-quality work, on time, every time.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Our modern infrastructure, skilled team and customer-first approach help us meet the diverse needs of clients across various industries.
+        </p>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Cheetah Solutions facility" class="w-full h-72 sm:h-80 object-cover" />
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
+      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
+        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">OUR MISSION</h3>
+        <p class="text-slate-500 text-sm">To provide quality services that add value to our business customers.</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
+        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">OUR VISION</h3>
+        <p class="text-slate-500 text-sm">To be a leading and most trusted service provider in our industry.</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
+        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">OUR VALUES</h3>
+        <p class="text-slate-500 text-sm">Integrity · Quality · Commitment</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
+        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">QUALITY POLICY</h3>
+        <p class="text-slate-500 text-sm">We are committed to continual improvement and client satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Journey -->
+  <section class="py-14 sm:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl sm:text-2xl font-extrabold text-white text-center tracking-wide mb-12 sm:mb-16">OUR JOURNEY</h2>
+      <div class="relative">
+        <div class="hidden sm:block absolute top-6 left-0 right-0 h-px bg-slate-800"></div>
+        <div class="grid grid-cols-2 sm:grid-cols-6 gap-8 sm:gap-4">
+          {journey.map((j) => (
+            <div class="text-center">
+              <div class="w-12 h-12 mx-auto mb-3 rounded-full border-2 border-orange-500 bg-slate-950 flex items-center justify-center text-orange-500 font-bold text-xs relative z-10">{j.year}</div>
+              <p class="text-slate-400 text-xs sm:text-sm">{j.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-choose-us" class="py-14 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 text-center tracking-wide mb-10 sm:mb-14">WHY CHOOSE US?</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 sm:gap-6 text-center">
+        {whyChooseUs.map((w) => (
+          <div>
+            <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl">{w.icon}</div>
+            <p class="text-slate-700 font-semibold text-xs sm:text-sm leading-snug">{w.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
