@@ -1,13 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const IMG = {
+  aboutBg: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419965/about_us_background_image.png",
+  harish: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419958/harish.png",
+  chetan: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419963/chetan.png",
+  chandu: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419964/chandu.png",
+};
+
 const journey = [
   { year: "2014", label: "Company Founded" },
   { year: "2016", label: "Expanded Workforce" },
   { year: "2018", label: "More Industrial Projects" },
   { year: "2020", label: "Added Security Services" },
   { year: "2022", label: "500+ Happy Clients" },
-  { year: "2024", label: "Continuing Excellence" },
+  { year: "2026", label: "Continuing Excellence" },
 ];
 
 const whyChooseUs = [
@@ -17,15 +24,36 @@ const whyChooseUs = [
   { title: "Competitive Pricing", icon: "💰" },
   { title: "Strong Client Relationship", icon: "🤝" },
 ];
+
+const team = [
+  {
+    name: "Harish G",
+    title: "Founder",
+    img: IMG.harish,
+    quote: "We built Cheetah Group on one promise — precision work and fair pay, delivered together, every single time.",
+  },
+  {
+    name: "Chetan",
+    title: "Head of Human Resource Operations",
+    img: IMG.chetan,
+    quote: "Great staffing isn't just filling a seat — it's placing the right person, verified and ready, before you even need them.",
+  },
+  {
+    name: "Chandu",
+    title: "Head of Enterprise (Piece Work) Operations",
+    img: IMG.chandu,
+    quote: "Every piece rate we set is transparent from day one — so our workforce always knows exactly what quality effort earns.",
+  },
+];
 ---
 
 <Layout title="About Us">
   <!-- Page Header -->
   <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style={`background-image:url('${IMG.aboutBg}')`}></div>
     <div class="relative">
       <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">ABOUT US</h1>
-      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-orange-500">Home</a> &gt; About Us</p>
+      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-brand-500">Home</a> &gt; About Us</p>
     </div>
   </section>
 
@@ -33,35 +61,58 @@ const whyChooseUs = [
   <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-2 gap-10 sm:gap-12 items-center mb-16 sm:mb-20">
       <div>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-orange-500 mb-4 tracking-wide">WHO WE ARE</h2>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-brand-600 mb-4 tracking-wide">WHO WE ARE</h2>
         <p class="text-slate-600 leading-relaxed mb-4 text-sm sm:text-base">
-          Cheetah Solutions is a trusted name in the mechanical piece work industry and manpower supply services. With years of experience, we are committed to delivering high-quality work, on time, every time.
+          Cheetah Group is a trusted name across two fields: manpower &amp; staffing, and manufacturing &amp; engineering piece work. With years of experience, we are committed to delivering high-quality work, on time, every time.
         </p>
         <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-          Our modern infrastructure, skilled team and customer-first approach help us meet the diverse needs of clients across various industries.
+          Our modern infrastructure, skilled team and customer-first approach help us meet the diverse needs of clients across industries — backed by transparent, fair piece-rate pay for every worker we place.
         </p>
       </div>
       <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Cheetah Solutions facility" class="w-full h-72 sm:h-80 object-cover" />
+        <img src={IMG.aboutBg} alt="Cheetah Group facility" class="w-full h-72 sm:h-80 object-cover" />
       </div>
     </div>
 
     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
       <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">OUR MISSION</h3>
+        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">OUR MISSION</h3>
         <p class="text-slate-500 text-sm">To provide quality services that add value to our business customers.</p>
       </div>
       <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">OUR VISION</h3>
+        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">OUR VISION</h3>
         <p class="text-slate-500 text-sm">To be a leading and most trusted service provider in our industry.</p>
       </div>
       <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">OUR VALUES</h3>
+        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">OUR VALUES</h3>
         <p class="text-slate-500 text-sm">Integrity · Quality · Commitment</p>
       </div>
       <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-orange-500 font-bold text-sm mb-2 tracking-wide">QUALITY POLICY</h3>
+        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">QUALITY POLICY</h3>
         <p class="text-slate-500 text-sm">We are committed to continual improvement and client satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="py-14 sm:py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center gap-4 mb-10 sm:mb-14">
+        <span class="h-px w-10 bg-brand-500"></span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">OUR LEADERSHIP</h2>
+        <span class="h-px w-10 bg-brand-500"></span>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        {team.map((member) => (
+          <div class="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm text-center hover:shadow-lg transition-all flex flex-col">
+            <img src={member.img} alt={member.name} class="w-full h-56 object-cover object-top" />
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="text-base font-bold text-slate-900">{member.name}</h3>
+              <p class="text-brand-600 text-xs sm:text-sm font-semibold mt-1 mb-3">{member.title}</p>
+              <p class="text-slate-500 text-xs sm:text-sm italic leading-relaxed mt-auto">&ldquo;{member.quote}&rdquo;</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -75,7 +126,7 @@ const whyChooseUs = [
         <div class="grid grid-cols-2 sm:grid-cols-6 gap-8 sm:gap-4">
           {journey.map((j) => (
             <div class="text-center">
-              <div class="w-12 h-12 mx-auto mb-3 rounded-full border-2 border-orange-500 bg-slate-950 flex items-center justify-center text-orange-500 font-bold text-xs relative z-10">{j.year}</div>
+              <div class="w-12 h-12 mx-auto mb-3 rounded-full border-2 border-brand-500 bg-slate-950 flex items-center justify-center text-brand-400 font-bold text-xs relative z-10">{j.year}</div>
               <p class="text-slate-400 text-xs sm:text-sm">{j.label}</p>
             </div>
           ))}

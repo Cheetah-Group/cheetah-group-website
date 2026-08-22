@@ -1,41 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const IMG = {
+  manufacturing: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419960/industrial_manufacturimg_and_engineering_pice_work.png",
+  powderCoating: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419962/powder_coating.png",
+  bending: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419964/bending.png",
+  fabrication: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419966/fabrication.png",
+  security: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419965/security_gurd_stafing.png",
+  manpower: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419965/manpower.png",
+};
+
 const mechanicalServices = [
-  { title: "Powder Coating Piece Work", desc: "We provide premium quality powder coating services for a long-lasting, corrosion resistant and attractive finish.", items: ["Pre-treatment", "Powder Coating", "Curing", "Quality Inspection"], img: "https://images.unsplash.com/photo-1620912189861-e7f0a5b0b0f5?auto=format&fit=crop&w=500&q=80", icon: "🎨" },
-  { title: "Welding Piece Work", desc: "Expert in all types of welding processes ensuring strong, precise and durable joints.", items: ["MIG Welding", "TIG Welding", "Spot Welding", "Arc Welding"], img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80", icon: "🔥" },
-  { title: "Bending Piece Work", desc: "CNC and V-Bending services for MS, SS, Aluminum and GI sheets & pipes with high accuracy.", items: ["CNC Bending", "Press Brake Bending", "Rolling", "Fabrication Support"], img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=500&q=80", icon: "📐" },
+  { title: "Powder Coating Piece Work", desc: "Premium powder coating for a long-lasting, corrosion resistant and attractive finish.", items: ["Pre-treatment", "Powder Coating", "Curing", "Quality Inspection"], img: IMG.powderCoating, icon: "🎨" },
+  { title: "Bending Piece Work", desc: "CNC and V-Bending services for MS, SS, Aluminum and GI sheets & pipes with high accuracy.", items: ["CNC Bending", "Press Brake Bending", "Rolling", "Fabrication Support"], img: IMG.bending, icon: "📐" },
+  { title: "Fabrication Piece Work", desc: "End-to-end metal fabrication piece work built to drawing-level precision and tight tolerances.", items: ["Cutting & Shearing", "Assembly", "Finishing", "Dimensional QC"], img: IMG.fabrication, icon: "🔩" },
+  { title: "Welding Piece Work", desc: "All types of welding processes ensuring strong, precise and durable joints.", items: ["MIG Welding", "TIG Welding", "Spot Welding", "Arc Welding"], img: IMG.manufacturing, icon: "🔥" },
 ];
 
 const hrServices = [
-  { title: "Manpower Supply", desc: "We supply skilled, semi-skilled and unskilled manpower for various industrial operations.", items: ["Skilled Manpower", "Semi-skilled Manpower", "Unskilled Manpower", "Contract / Temporary Staffing"], img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80" },
-  { title: "Security Staff Supply", desc: "Professional and well-trained security staff to ensure safety and peace of mind.", items: ["Security Guards", "Supervisors", "CCTV Monitoring Staff", "24x7 Security Support"], img: "https://images.unsplash.com/photo-1580795479225-c50ab8c3348d?auto=format&fit=crop&w=700&q=80" },
+  { title: "Manpower Supply", desc: "We supply skilled, semi-skilled and unskilled manpower for various industrial operations.", items: ["Skilled Manpower", "Semi-skilled Manpower", "Unskilled Manpower", "Contract / Temporary Staffing"], img: IMG.manpower },
+  { title: "Security Staff Supply", desc: "Professional and well-trained security staff to ensure safety and peace of mind.", items: ["Security Guards", "Supervisors", "CCTV Monitoring Staff", "24x7 Security Support"], img: IMG.security },
+];
+
+const payModels = [
+  {
+    title: "Straight Piece Rate",
+    icon: "📦",
+    desc: "Workers earn a flat, fixed fee for every unit they complete — for example, a set amount per circuit board soldered. Total pay is simply units completed multiplied by the agreed unit rate, so earnings scale directly and transparently with output.",
+  },
+  {
+    title: "Differential Piece Rate",
+    icon: "📈",
+    desc: "The per-unit rate changes once a worker crosses a daily quota. Hitting or exceeding the threshold unlocks a higher rate — either for every unit that day or for units produced beyond the quota — rewarding higher performance with higher pay.",
+  },
+  {
+    title: "Minimum Wage Guardrails",
+    icon: "🛡️",
+    desc: "In every jurisdiction we operate in, we ensure total earnings divided by hours worked never fall below the legal minimum wage. If output on a given day falls short, Cheetah Group makes up the difference — piece-rate pay is always a floor, never a risk.",
+  },
 ];
 ---
 
 <Layout title="Our Services">
   <!-- Page Header -->
   <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1400&q=80')"></div>
+    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style={`background-image:url('${IMG.manufacturing}')`}></div>
     <div class="relative">
       <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">OUR SERVICES</h1>
-      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-orange-500">Home</a> &gt; Services</p>
+      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-brand-500">Home</a> &gt; Services</p>
     </div>
   </section>
 
-  <!-- Mechanical Piece Work Services -->
+  <!-- Manufacturing & Engineering Piece Work Services -->
   <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-wide text-center mb-10 sm:mb-12">MECHANICAL PIECE WORK SERVICES</h2>
-    <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+    <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-wide text-center mb-3">MANUFACTURING &amp; ENGINEERING PIECE WORK</h2>
+    <p class="text-slate-500 text-sm text-center max-w-2xl mx-auto mb-10 sm:mb-12">Precision-driven piece work services for industrial and engineering clients.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
       {mechanicalServices.map((service) => (
         <div class="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
-          <img src={service.img} alt={service.title} class="w-full h-44 object-cover" />
-          <div class="p-6 relative">
-            <div class="absolute -top-6 left-6 w-11 h-11 rounded-full bg-slate-950 text-orange-500 flex items-center justify-center text-lg border-4 border-white">{service.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900 mt-4 mb-2">{service.title.toUpperCase()}</h3>
-            <p class="text-slate-500 text-sm mb-4 leading-relaxed">{service.desc}</p>
-            <ul class="space-y-2 text-sm text-slate-600">
-              {service.items.map((item) => <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">•</span> {item}</li>)}
+          <img src={service.img} alt={service.title} class="w-full h-40 object-cover" />
+          <div class="p-5 sm:p-6 relative">
+            <div class="absolute -top-6 left-5 sm:left-6 w-11 h-11 rounded-full bg-slate-950 text-brand-400 flex items-center justify-center text-lg border-4 border-white">{service.icon}</div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mt-4 mb-2">{service.title.toUpperCase()}</h3>
+            <p class="text-slate-500 text-xs sm:text-sm mb-4 leading-relaxed">{service.desc}</p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+              {service.items.map((item) => <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">•</span> {item}</li>)}
             </ul>
           </div>
         </div>
@@ -43,9 +72,10 @@ const hrServices = [
     </div>
   </section>
 
-  <!-- HR Management Services -->
+  <!-- Manpower & Staffing Services -->
   <section class="pb-14 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-wide text-center mb-10 sm:mb-12">HUMAN RESOURCE MANAGEMENT SERVICES</h2>
+    <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-wide text-center mb-3">MANPOWER &amp; STAFFING SERVICES</h2>
+    <p class="text-slate-500 text-sm text-center max-w-2xl mx-auto mb-10 sm:mb-12">Reliable workforce and security staffing, fully managed end-to-end.</p>
     <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
       {hrServices.map((service) => (
         <div class="relative rounded-xl overflow-hidden h-64 sm:h-72 bg-cover bg-center shadow-sm" style={`background-image:linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.88)), url('${service.img}')`}>
@@ -53,11 +83,34 @@ const hrServices = [
             <h3 class="text-xl font-bold text-white mb-2">{service.title.toUpperCase()}</h3>
             <p class="text-slate-300 text-sm mb-4 leading-relaxed max-w-md">{service.desc}</p>
             <ul class="grid grid-cols-2 gap-y-1 gap-x-4 text-sm text-slate-200">
-              {service.items.map((item) => <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">•</span> {item}</li>)}
+              {service.items.map((item) => <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> {item}</li>)}
             </ul>
           </div>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- Piece-Rate Pay Structure -->
+  <section id="pay-structure" class="py-14 sm:py-20 bg-slate-50 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <span class="h-px w-10 bg-brand-500"></span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide text-center">HOW PIECE-RATE PAY WORKS</h2>
+        <span class="h-px w-10 bg-brand-500"></span>
+      </div>
+      <p class="text-slate-500 text-sm sm:text-base text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        In our manufacturing and engineering piece work, pay ties directly to labor output and operational efficiency — structured around three principles.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        {payModels.map((p) => (
+          <div class="bg-white border border-slate-100 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all">
+            <div class="w-12 h-12 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center text-xl mb-4">{p.icon}</div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-3">{p.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -71,7 +124,7 @@ const hrServices = [
           <p class="text-slate-400 text-sm">We understand your requirement and deliver tailored solutions.</p>
         </div>
       </div>
-      <a href="/contact" class="whitespace-nowrap bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded transition-all text-sm">Get a Quote</a>
+      <a href="/contact" class="whitespace-nowrap bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded transition-all text-sm">Get a Quote</a>
     </div>
   </section>
 </Layout>
