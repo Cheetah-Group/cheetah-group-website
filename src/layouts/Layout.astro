@@ -5,14 +5,19 @@ interface Props {
   title: string;
   description?: string;
   keywords?: string;
-  ogImage?: string;
 }
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+const logoUrl =
+  "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787717175/logo.png";
 
 const {
   title,
-  description = "Cheetah Groups provides manpower and staffing solutions, manufacturing and engineering piece work, powder coating, bending, fabrication, security staff supply, and digital services in Bangalore.",
+  description = "Cheetah Groups provides manufacturing and engineering piece work, manpower and staffing solutions, powder coating, bending, fabrication, security staff supply, and digital services in Bangalore.",
   keywords = "Cheetah Groups, manpower supply Bangalore, staffing solutions Bangalore, security staff supply, powder coating piece work, bending piece work, fabrication piece work, engineering piece work, manpower services, website development, web application development, desktop application development, ERP software, SEO services, digital services Bangalore",
-  ogImage = "/og-image.jpg",
 } = Astro.props;
 
 const navLinks = [
@@ -21,15 +26,6 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
 ];
-
-/* =========================================================
-   Cloudinary
-   f_auto → automatic image format
-   q_auto → automatic image quality
-========================================================= */
-
-const logoUrl =
-  "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787717175/logo.png";
 
 /* =========================================================
    SEO
@@ -42,13 +38,13 @@ const canonicalURL = new URL(
   Astro.site
 ).toString();
 
-const ogImageURL = new URL(
-  ogImage,
-  Astro.site
-).toString();
+/*
+ * Use the Cloudinary logo for Open Graph and Twitter.
+ */
+const ogImageURL = logoUrl;
 
 /* =========================================================
-   Business Structured Data
+   BUSINESS STRUCTURED DATA
 ========================================================= */
 
 const businessSchema = {
@@ -83,6 +79,7 @@ const businessSchema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
+
       dayOfWeek: [
         "Monday",
         "Tuesday",
@@ -91,6 +88,7 @@ const businessSchema = {
         "Friday",
         "Saturday",
       ],
+
       opens: "09:00",
       closes: "18:00",
     },
@@ -111,6 +109,7 @@ const businessSchema = {
 
 <!doctype html>
 <html lang="en">
+
   <head>
 
     <!-- =====================================================
@@ -151,7 +150,24 @@ const businessSchema = {
       content="Cheetah Groups"
     />
 
-    <!-- Canonical -->
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="/favicon.png"
+    />
+
+    <!-- =====================================================
+         CANONICAL
+    ====================================================== -->
 
     <link
       rel="canonical"
@@ -182,6 +198,7 @@ const businessSchema = {
       content={canonicalURL}
     />
 
+    <!-- Cloudinary Logo -->
     <meta
       property="og:image"
       content={ogImageURL}
@@ -216,6 +233,7 @@ const businessSchema = {
       content={description}
     />
 
+    <!-- Cloudinary Logo -->
     <meta
       name="twitter:image"
       content={ogImageURL}
@@ -230,17 +248,8 @@ const businessSchema = {
       set:html={JSON.stringify(businessSchema)}
     ></script>
 
-    <!-- =====================================================
-         FAVICON
-    ====================================================== -->
-
-    <link
-      rel="icon"
-      type="image/png"
-      href={logoUrl}
-    />
-
   </head>
+
 
   <body
     class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen"
@@ -268,8 +277,6 @@ const businessSchema = {
           aria-label="Cheetah Groups Home"
         >
 
-          <!-- Logo -->
-
           <img
             src={logoUrl}
             alt="Cheetah Groups Logo"
@@ -278,8 +285,6 @@ const businessSchema = {
             height="48"
             decoding="async"
           />
-
-          <!-- Brand Name -->
 
           <div
             class="flex items-baseline gap-1 leading-none whitespace-nowrap"
@@ -300,6 +305,7 @@ const businessSchema = {
           </div>
 
         </a>
+
 
         <!-- =================================================
              DESKTOP NAVIGATION
@@ -323,6 +329,7 @@ const businessSchema = {
 
         </nav>
 
+
         <!-- =================================================
              DESKTOP CTA
         ================================================== -->
@@ -337,6 +344,7 @@ const businessSchema = {
           </a>
 
         </div>
+
 
         <!-- =================================================
              MOBILE MENU BUTTON
@@ -371,6 +379,7 @@ const businessSchema = {
         </button>
 
       </div>
+
 
       <!-- ===================================================
            MOBILE NAVIGATION
@@ -410,6 +419,7 @@ const businessSchema = {
 
     </header>
 
+
     <!-- =====================================================
          MAIN CONTENT
     ====================================================== -->
@@ -417,6 +427,7 @@ const businessSchema = {
     <main class="flex-grow">
       <slot />
     </main>
+
 
     <!-- =====================================================
          FOOTER
@@ -436,8 +447,6 @@ const businessSchema = {
 
         <div>
 
-          <!-- Logo with White Background -->
-
           <div
             class="inline-flex items-center bg-white rounded-lg p-2 mb-4"
           >
@@ -454,7 +463,6 @@ const businessSchema = {
 
           </div>
 
-          <!-- Brand Name -->
 
           <div
             class="flex items-baseline gap-1 mb-4"
@@ -474,7 +482,6 @@ const businessSchema = {
 
           </div>
 
-          <!-- Description -->
 
           <p class="leading-relaxed">
             Precision in every piece, expertise in every hire.
@@ -483,6 +490,7 @@ const businessSchema = {
           </p>
 
         </div>
+
 
         <!-- =================================================
              QUICK LINKS
@@ -537,6 +545,7 @@ const businessSchema = {
           </ul>
 
         </div>
+
 
         <!-- =================================================
              OUR SERVICES
@@ -610,6 +619,7 @@ const businessSchema = {
 
         </div>
 
+
         <!-- =================================================
              CONTACT INFORMATION
         ================================================== -->
@@ -623,8 +633,6 @@ const businessSchema = {
           </h4>
 
           <div class="space-y-3">
-
-            <!-- Phone -->
 
             <p>
               <a
@@ -640,7 +648,6 @@ const businessSchema = {
               </a>
             </p>
 
-            <!-- Email -->
 
             <p>
               <a
@@ -657,7 +664,6 @@ const businessSchema = {
               </a>
             </p>
 
-            <!-- Address -->
 
             <p class="flex items-start gap-2">
 
@@ -670,7 +676,6 @@ const businessSchema = {
 
             </p>
 
-            <!-- Website -->
 
             <a
               href="https://www.cheetahgroups.in"
@@ -692,6 +697,7 @@ const businessSchema = {
         </div>
 
       </div>
+
 
       <!-- ===================================================
            COPYRIGHT
@@ -727,18 +733,22 @@ const businessSchema = {
 
     </footer>
 
+
     <!-- =====================================================
          MOBILE MENU SCRIPT
     ====================================================== -->
 
     <script>
+
       const btn =
         document.getElementById("mobile-menu-btn");
 
       const menu =
         document.getElementById("mobile-menu");
 
+
       btn?.addEventListener("click", () => {
+
         menu?.classList.toggle("hidden");
 
         const isOpen =
@@ -748,7 +758,9 @@ const businessSchema = {
           "aria-expanded",
           String(isOpen)
         );
+
       });
+
 
       // Close menu after selecting a link
 
@@ -766,7 +778,9 @@ const businessSchema = {
         });
 
       });
+
     </script>
 
   </body>
+
 </html>
