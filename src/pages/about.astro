@@ -2,10 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 
 const IMG = {
-  aboutBg: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419965/about_us_background_image.png",
-  harish: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419958/harish.png",
-  chetan: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419963/chetan.png",
-  chandu: "https://res.cloudinary.com/clsewnkk/image/upload/v1787419964/chandu.png",
+  aboutBg:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/about_us_background_image.png",
+
+  harish:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419958/harish.png",
+
+  chetan:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419963/chetan.png",
+
+  chandu:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787723922/chand_s.png",
 };
 
 const journey = [
@@ -13,7 +20,7 @@ const journey = [
   { year: "2016", label: "Expanded Workforce" },
   { year: "2018", label: "More Industrial Projects" },
   { year: "2020", label: "Added Security Services" },
-  { year: "2022", label: "500+ Happy Clients" },
+  { year: "2022", label: "50+ Happy Clients" },
   { year: "2026", label: "Continuing Excellence" },
 ];
 
@@ -30,86 +37,234 @@ const team = [
     name: "Harish M",
     title: "Founder",
     img: IMG.harish,
-    quote: "We built Cheetah Groups on one promise — precision work and fair pay, delivered together, every single time.",
-    },
+    quote:
+      "We built Cheetah Groups on one promise — precision work and fair pay, delivered together, every single time.",
+  },
   {
     name: "Chethen KH",
     title: "Head of Human Resource Operations",
     img: IMG.chetan,
-    quote: "Great staffing isn't just filling a seat — it's placing the right person, verified and ready, before you even need them.",
+    quote:
+      "Great staffing isn't just filling a seat — it's placing the right person, verified and ready, before you even need them.",
   },
   {
     name: "Chandu S",
     title: "Head of Enterprise (Piece Work) Operations",
     img: IMG.chandu,
-    quote: "Every piece rate we set is transparent from day one — so our workforce always knows exactly what quality effort earns.",
+    quote:
+      "Every piece rate we set is transparent from day one — so our workforce always knows exactly what quality effort earns.",
   },
 ];
 ---
 
-<Layout title="About Us">
-  <!-- Page Header -->
-  <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style={`background-image:url('${IMG.aboutBg}')`}></div>
-    <div class="relative">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">ABOUT US</h1>
-      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-brand-500">Home</a> &gt; About Us</p>
+<Layout
+  title="About Us"
+  description="Learn about Cheetah Groups — a trusted Bangalore-based provider of manpower & staffing and manufacturing & engineering piece work since 2014, with a leadership team committed to quality, transparency and fair piece-rate pay."
+>
+  <!-- =========================================================
+       Page Header
+  ========================================================== -->
+  <section
+    class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 opacity-30 bg-cover bg-center"
+      style={`background-image:url('${IMG.aboutBg}')`}
+    ></div>
+
+    <div class="relative px-4">
+      <h1
+        class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide"
+      >
+        ABOUT US
+      </h1>
     </div>
   </section>
 
-  <!-- Who We Are -->
-  <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-10 sm:gap-12 items-center mb-16 sm:mb-20">
+  <!-- =========================================================
+       Who We Are
+  ========================================================== -->
+  <section
+    class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+    <div
+      class="grid md:grid-cols-2 gap-10 sm:gap-12 items-center mb-16 sm:mb-20"
+    >
+      <!-- Content -->
       <div>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-brand-600 mb-4 tracking-wide">WHO WE ARE</h2>
-        <p class="text-slate-600 leading-relaxed mb-4 text-sm sm:text-base">
-          Cheetah Groups is a trusted name across two fields: manpower &amp; staffing, and manufacturing &amp; engineering piece work. With years of experience, we are committed to delivering high-quality work, on time, every time.
+        <h2
+          class="text-xl sm:text-2xl font-extrabold text-brand-600 mb-4 tracking-wide"
+        >
+          WHO WE ARE
+        </h2>
+
+        <p
+          class="text-slate-600 leading-relaxed mb-4 text-sm sm:text-base"
+        >
+          Cheetah Groups is a trusted name across two fields: manpower
+          &amp; staffing, and manufacturing &amp; engineering piece work.
+          With years of experience, we are committed to delivering
+          high-quality work, on time, every time.
         </p>
+
         <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-          Our modern infrastructure, skilled team and customer-first approach help us meet the diverse needs of clients across industries — backed by transparent, fair piece-rate pay for every worker we place.
+          Our modern infrastructure, skilled team and customer-first
+          approach help us meet the diverse needs of clients across
+          industries — backed by transparent, fair piece-rate pay for
+          every worker we place.
         </p>
       </div>
-      <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm">
-        <img src={IMG.aboutBg} alt="Cheetah Groups facility" class="w-full h-72 sm:h-80 object-cover" />
+
+      <!-- About Image -->
+      <div
+        class="rounded-xl overflow-hidden border border-slate-100 shadow-sm"
+      >
+        <img
+          src={IMG.aboutBg}
+          alt="Cheetah Groups facility"
+          loading="lazy"
+          class="block w-full h-auto object-contain"
+        />
       </div>
     </div>
 
+    <!-- Mission / Vision / Values / Quality -->
     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
-      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">OUR MISSION</h3>
-        <p class="text-slate-500 text-sm">To provide quality services that add value to our business customers.</p>
+      <!-- Mission -->
+      <div
+        class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all"
+      >
+        <h3
+          class="text-brand-600 font-bold text-sm mb-2 tracking-wide"
+        >
+          OUR MISSION
+        </h3>
+
+        <p class="text-slate-500 text-sm">
+          To provide quality services that add value to our business
+          customers.
+        </p>
       </div>
-      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">OUR VISION</h3>
-        <p class="text-slate-500 text-sm">To be a leading and most trusted service provider in our industry.</p>
+
+      <!-- Vision -->
+      <div
+        class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all"
+      >
+        <h3
+          class="text-brand-600 font-bold text-sm mb-2 tracking-wide"
+        >
+          OUR VISION
+        </h3>
+
+        <p class="text-slate-500 text-sm">
+          To be a leading and most trusted service provider in our
+          industry.
+        </p>
       </div>
-      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">OUR VALUES</h3>
-        <p class="text-slate-500 text-sm">Integrity · Quality · Commitment</p>
+
+      <!-- Values -->
+      <div
+        class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all"
+      >
+        <h3
+          class="text-brand-600 font-bold text-sm mb-2 tracking-wide"
+        >
+          OUR VALUES
+        </h3>
+
+        <p class="text-slate-500 text-sm">
+          Integrity · Quality · Commitment
+        </p>
       </div>
-      <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all">
-        <h3 class="text-brand-600 font-bold text-sm mb-2 tracking-wide">QUALITY POLICY</h3>
-        <p class="text-slate-500 text-sm">We are committed to continual improvement and client satisfaction.</p>
+
+      <!-- Quality Policy -->
+      <div
+        class="bg-slate-50 border border-slate-100 p-6 rounded-xl text-center hover:shadow-md transition-all"
+      >
+        <h3
+          class="text-brand-600 font-bold text-sm mb-2 tracking-wide"
+        >
+          QUALITY POLICY
+        </h3>
+
+        <p class="text-slate-500 text-sm">
+          We are committed to continual improvement and client
+          satisfaction.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Leadership Team -->
+  <!-- =========================================================
+       Leadership Team
+  ========================================================== -->
   <section class="py-14 sm:py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-center gap-4 mb-10 sm:mb-14">
-        <span class="h-px w-10 bg-brand-500"></span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">OUR LEADERSHIP</h2>
-        <span class="h-px w-10 bg-brand-500"></span>
+
+      <!-- Section Heading -->
+      <div
+        class="flex items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14"
+      >
+        <span class="h-px w-8 sm:w-10 bg-brand-500"></span>
+
+        <h2
+          class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide text-center"
+        >
+          OUR LEADERSHIP
+        </h2>
+
+        <span class="h-px w-8 sm:w-10 bg-brand-500"></span>
       </div>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+
+      <!-- Team Cards -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto"
+      >
         {team.map((member) => (
-          <div class="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm text-center hover:shadow-lg transition-all flex flex-col">
-            <img src={member.img} alt={member.name} class="w-full h-56 object-cover object-top" />
-            <div class="p-5 flex flex-col flex-grow">
-              <h3 class="text-base font-bold text-slate-900">{member.name}</h3>
-              <p class="text-brand-600 text-xs sm:text-sm font-semibold mt-1 mb-3">{member.title}</p>
-              <p class="text-slate-500 text-xs sm:text-sm italic leading-relaxed mt-auto">&ldquo;{member.quote}&rdquo;</p>
+          <div
+            class="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm text-center hover:shadow-lg transition-all flex flex-col w-full min-w-0"
+          >
+
+            <!--
+              Full Responsive Image
+
+              The original image is 1123 × 1400,
+              approximately 4:5 ratio.
+
+              We DON'T use object-cover here because
+              object-cover would crop the person's image.
+            -->
+            <div class="w-full overflow-hidden bg-slate-100">
+              <img
+                src={member.img}
+                alt={member.name}
+                loading="lazy"
+                decoding="async"
+                class="block w-full h-auto object-contain"
+              />
+            </div>
+
+            <!-- Member Information -->
+            <div class="p-4 sm:p-5 flex flex-col flex-grow">
+
+              <h3
+                class="text-base sm:text-lg font-bold text-slate-900"
+              >
+                {member.name}
+              </h3>
+
+              <p
+                class="text-brand-600 text-xs sm:text-sm font-semibold mt-1 mb-3 leading-relaxed"
+              >
+                {member.title}
+              </p>
+
+              <p
+                class="text-slate-500 text-xs sm:text-sm italic leading-relaxed mt-auto"
+              >
+                &ldquo;{member.quote}&rdquo;
+              </p>
+
             </div>
           </div>
         ))}
@@ -117,17 +272,42 @@ const team = [
     </div>
   </section>
 
-  <!-- Our Journey -->
+  <!-- =========================================================
+       Our Journey
+  ========================================================== -->
   <section class="py-14 sm:py-20 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-xl sm:text-2xl font-extrabold text-white text-center tracking-wide mb-12 sm:mb-16">OUR JOURNEY</h2>
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <h2
+        class="text-xl sm:text-2xl font-extrabold text-white text-center tracking-wide mb-12 sm:mb-16"
+      >
+        OUR JOURNEY
+      </h2>
+
       <div class="relative">
-        <div class="hidden sm:block absolute top-6 left-0 right-0 h-px bg-slate-800"></div>
-        <div class="grid grid-cols-2 sm:grid-cols-6 gap-8 sm:gap-4">
+
+        <!-- Timeline Line -->
+        <div
+          class="hidden sm:block absolute top-6 left-0 right-0 h-px bg-slate-800"
+        ></div>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-6 gap-8 sm:gap-4"
+        >
           {journey.map((j) => (
             <div class="text-center">
-              <div class="w-12 h-12 mx-auto mb-3 rounded-full border-2 border-brand-500 bg-slate-950 flex items-center justify-center text-brand-400 font-bold text-xs relative z-10">{j.year}</div>
-              <p class="text-slate-400 text-xs sm:text-sm">{j.label}</p>
+
+              <div
+                class="w-12 h-12 mx-auto mb-3 rounded-full border-2 border-brand-500 bg-slate-950 flex items-center justify-center text-brand-400 font-bold text-xs relative z-10"
+              >
+                {j.year}
+              </div>
+
+              <p class="text-slate-400 text-xs sm:text-sm">
+                {j.label}
+              </p>
+
             </div>
           ))}
         </div>
@@ -135,15 +315,38 @@ const team = [
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section id="why-choose-us" class="py-14 sm:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 text-center tracking-wide mb-10 sm:mb-14">WHY CHOOSE US?</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 sm:gap-6 text-center">
+  <!-- =========================================================
+       Why Choose Us
+  ========================================================== -->
+  <section
+    id="why-choose-us"
+    class="py-14 sm:py-20 bg-white"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <h2
+        class="text-xl sm:text-2xl font-extrabold text-slate-900 text-center tracking-wide mb-10 sm:mb-14"
+      >
+        WHY CHOOSE US?
+      </h2>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-5 gap-8 sm:gap-6 text-center"
+      >
         {whyChooseUs.map((w) => (
           <div>
-            <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl">{w.icon}</div>
-            <p class="text-slate-700 font-semibold text-xs sm:text-sm leading-snug">{w.title}</p>
+            <div
+              class="w-14 h-14 mx-auto mb-4 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl"
+            >
+              {w.icon}
+            </div>
+
+            <p
+              class="text-slate-700 font-semibold text-xs sm:text-sm leading-snug"
+            >
+              {w.title}
+            </p>
           </div>
         ))}
       </div>

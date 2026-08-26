@@ -1,138 +1,772 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
 }
 
 const {
   title,
-  description = "Cheetah groups — Manpower & Staffing Solutions and Manufacturing & Engineering Piece Work.",
+  description = "Cheetah Groups provides manpower and staffing solutions, manufacturing and engineering piece work, powder coating, bending, fabrication, security staff supply, and digital services in Bangalore.",
+  keywords = "Cheetah Groups, manpower supply Bangalore, staffing solutions Bangalore, security staff supply, powder coating piece work, bending piece work, fabrication piece work, engineering piece work, manpower services, website development, web application development, desktop application development, ERP software, SEO services, digital services Bangalore",
+  ogImage = "/og-image.jpg",
 } = Astro.props;
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About Us' },
-  { href: '/contact', label: 'Contact Us' },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
+
+/* =========================================================
+   Cloudinary
+   f_auto → automatic image format
+   q_auto → automatic image quality
+========================================================= */
+
+const logoUrl =
+  "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787717175/logo.png";
+
+/* =========================================================
+   SEO
+========================================================= */
+
+const fullTitle = `${title} | Cheetah Groups`;
+
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site
+).toString();
+
+const ogImageURL = new URL(
+  ogImage,
+  Astro.site
+).toString();
+
+/* =========================================================
+   Business Structured Data
+========================================================= */
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+
+  name: "Cheetah Groups",
+
+  image: logoUrl,
+
+  url: Astro.site?.toString(),
+
+  telephone: "+91 7349667449",
+
+  email: "contact@cheetahgroups.com",
+
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Surya City Phase 1, Chandapura, Anekal Taluka",
+    addressLocality: "Bangalore",
+    postalCode: "560099",
+    addressRegion: "Karnataka",
+    addressCountry: "IN",
+  },
+
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 12.792253,
+    longitude: 77.70163,
+  },
+
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+
+  areaServed: {
+    "@type": "City",
+    name: "Bangalore",
+  },
+
+  sameAs: [
+    "https://www.cheetahgroups.in",
+  ],
+
+  description,
+};
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | Cheetah groups</title>
-    <meta name="description" content={description} />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%2316a34a%22/><text x=%2212%22 y=%2217%22 font-size=%2214%22 font-family=%22Arial%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>CG</text></svg>" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="theme-color"
+      content="#020617"
+    />
+
+    <title>{fullTitle}</title>
+
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <meta
+      name="keywords"
+      content={keywords}
+    />
+
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+
+    <meta
+      name="author"
+      content="Cheetah Groups"
+    />
+
+    <!-- Canonical -->
+
+    <link
+      rel="canonical"
+      href={canonicalURL}
+    />
+
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
+
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:title"
+      content={fullTitle}
+    />
+
+    <meta
+      property="og:description"
+      content={description}
+    />
+
+    <meta
+      property="og:url"
+      content={canonicalURL}
+    />
+
+    <meta
+      property="og:image"
+      content={ogImageURL}
+    />
+
+    <meta
+      property="og:site_name"
+      content="Cheetah Groups"
+    />
+
+    <meta
+      property="og:locale"
+      content="en_IN"
+    />
+
+    <!-- =====================================================
+         TWITTER CARD
+    ====================================================== -->
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content={fullTitle}
+    />
+
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+
+    <meta
+      name="twitter:image"
+      content={ogImageURL}
+    />
+
+    <!-- =====================================================
+         STRUCTURED DATA
+    ====================================================== -->
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(businessSchema)}
+    ></script>
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href={logoUrl}
+    />
+
   </head>
-  <body class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen">
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2 sm:gap-3">
-          <span class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-brand-500 text-slate-950 rounded-md font-black text-sm sm:text-base">CG</span>
-          <span class="leading-tight">
-            <span class="block text-sm sm:text-base font-extrabold tracking-wide text-slate-900">CHEETAH</span>
-            <span class="block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-brand-600 -mt-0.5">groups</span>
-          </span>
+
+  <body
+    class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen"
+  >
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm"
+    >
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between min-h-[64px]"
+      >
+
+        <!-- =================================================
+             LOGO + BRAND NAME
+        ================================================== -->
+
+        <a
+          href="/"
+          class="flex items-center gap-2 shrink-0"
+          aria-label="Cheetah Groups Home"
+        >
+
+          <!-- Logo -->
+
+          <img
+            src={logoUrl}
+            alt="Cheetah Groups Logo"
+            class="h-9 sm:h-10 md:h-11 w-auto max-w-[150px] sm:max-w-[170px] object-contain"
+            width="180"
+            height="48"
+            decoding="async"
+          />
+
+          <!-- Brand Name -->
+
+          <div
+            class="flex items-baseline gap-1 leading-none whitespace-nowrap"
+          >
+
+            <span
+              class="text-base sm:text-lg md:text-xl font-black tracking-wide text-yellow-500"
+            >
+              CHEETAH
+            </span>
+
+            <span
+              class="text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-[0.15em] text-slate-800"
+            >
+              GROUPS
+            </span>
+
+          </div>
+
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-600">
-          {navLinks.map((link) => (
-            <a href={link.href} class="hover:text-brand-600 transition-colors">{link.label}</a>
-          ))}
+        <!-- =================================================
+             DESKTOP NAVIGATION
+        ================================================== -->
+
+        <nav
+          class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-600"
+          aria-label="Main Navigation"
+        >
+
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="hover:text-brand-600 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+
         </nav>
 
+        <!-- =================================================
+             DESKTOP CTA
+        ================================================== -->
+
         <div class="hidden lg:block">
-          <a href="/contact" class="bg-slate-950 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded transition-all text-sm shadow-sm">
+
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center bg-slate-950 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-md transition-all text-sm shadow-sm"
+          >
             Get a Quote
           </a>
+
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" aria-label="Toggle Navigation" class="lg:hidden p-2 text-slate-700 hover:text-brand-600 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <!-- =================================================
+             MOBILE MENU BUTTON
+        ================================================== -->
+
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="lg:hidden p-2 rounded-md text-slate-700 hover:text-brand-600 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand-500"
+        >
+
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+
           </svg>
+
         </button>
+
       </div>
 
-      <!-- Mobile Dropdown Navigation -->
-      <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
-        {navLinks.map((link) => (
-          <a href={link.href} class="block py-2 text-slate-600 hover:text-brand-600 font-semibold">{link.label}</a>
-        ))}
-        <a href="/contact" class="block w-full text-center bg-brand-500 text-slate-950 font-bold py-2.5 rounded mt-4">
-          Get a Quote
-        </a>
+      <!-- ===================================================
+           MOBILE NAVIGATION
+      ==================================================== -->
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t border-slate-100 shadow-sm"
+      >
+
+        <nav
+          class="max-w-7xl mx-auto px-4 sm:px-6 py-3"
+          aria-label="Mobile Navigation"
+        >
+
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="block py-3 px-2 text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-md font-semibold transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+
+          <a
+            href="/contact"
+            class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-3 rounded-md mt-3 transition-colors"
+          >
+            Get a Quote
+          </a>
+
+        </nav>
+
       </div>
+
     </header>
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
     <main class="flex-grow">
       <slot />
     </main>
 
-    <!-- Global Footer -->
-    <footer class="bg-slate-950 pt-12 sm:pt-16 pb-6 text-slate-400 text-xs sm:text-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10">
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer
+      class="bg-slate-950 pt-12 sm:pt-16 pb-6 text-slate-400 text-xs sm:text-sm"
+    >
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10"
+      >
+
+        <!-- =================================================
+             COMPANY
+        ================================================== -->
+
         <div>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="flex items-center justify-center w-8 h-8 bg-brand-500 text-slate-950 rounded font-black text-sm">CG</span>
-            <span class="text-sm font-extrabold tracking-wide text-white">Cheetah <span class="text-brand-500">groups</span></span>
+
+          <!-- Logo with White Background -->
+
+          <div
+            class="inline-flex items-center bg-white rounded-lg p-2 mb-4"
+          >
+
+            <img
+              src={logoUrl}
+              alt="Cheetah Groups Logo"
+              class="h-10 sm:h-11 w-auto max-w-[180px] object-contain"
+              width="180"
+              height="48"
+              loading="lazy"
+              decoding="async"
+            />
+
           </div>
-          <p class="leading-relaxed">Precision in every piece, expertise in every hire. Manpower &amp; staffing and manufacturing &amp; engineering piece work, under one roof.</p>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3 sm:mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="/" class="hover:text-brand-500">Home</a></li>
-            <li><a href="/services" class="hover:text-brand-500">Services</a></li>
-            <li><a href="/about" class="hover:text-brand-500">About Us</a></li>
-            <li><a href="/contact" class="hover:text-brand-500">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3 sm:mb-4">Our Services</h4>
-          <ul class="space-y-2">
-            <li><a href="/services" class="hover:text-brand-500">Powder Coating Piece Work</a></li>
-            <li><a href="/services" class="hover:text-brand-500">Welding Piece Work</a></li>
-            <li><a href="/services" class="hover:text-brand-500">Bending Piece Work</a></li>
-            <li><a href="/services" class="hover:text-brand-500">Manpower Supply</a></li>
-            <li><a href="/services" class="hover:text-brand-500">Security Staff Supply</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3 sm:mb-4">Contact Info</h4>
-          <p class="mb-2">📞 +91 12345 67890</p>
-          <p class="mb-2">✉️ contact@cheetahgroups.com</p>
-          <p class="mb-2">📍 123, Industrial Area, City, State - 000000</p>
-          <div class="flex gap-3 mt-4">
-            <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center hover:border-brand-500 hover:text-brand-500">f</a>
-            <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center hover:border-brand-500 hover:text-brand-500">in</a>
-            <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center hover:border-brand-500 hover:text-brand-500">ig</a>
+
+          <!-- Brand Name -->
+
+          <div
+            class="flex items-baseline gap-1 mb-4"
+          >
+
+            <span
+              class="text-base font-black tracking-wide text-yellow-500"
+            >
+              CHEETAH
+            </span>
+
+            <span
+              class="text-[10px] font-semibold tracking-[0.15em] text-white"
+            >
+              GROUPS
+            </span>
+
           </div>
+
+          <!-- Description -->
+
+          <p class="leading-relaxed">
+            Precision in every piece, expertise in every hire.
+            Manpower &amp; staffing and manufacturing &amp;
+            engineering piece work, under one roof.
+          </p>
+
         </div>
+
+        <!-- =================================================
+             QUICK LINKS
+        ================================================== -->
+
+        <div>
+
+          <h4
+            class="text-white font-semibold mb-3 sm:mb-4"
+          >
+            Quick Links
+          </h4>
+
+          <ul class="space-y-2">
+
+            <li>
+              <a
+                href="/"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/about"
+                class="hover:text-brand-500 transition-colors"
+              >
+                About Us
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/contact"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Contact Us
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- =================================================
+             OUR SERVICES
+        ================================================== -->
+
+        <div>
+
+          <h4
+            class="text-white font-semibold mb-3 sm:mb-4"
+          >
+            Our Services
+          </h4>
+
+          <ul class="space-y-2">
+
+            <li>
+              <a
+                href="/services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Powder Coating Piece Work
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Bending Piece Work
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Fabrication Piece Work
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Manpower Supply
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Security Staff Supply
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services#digital-services"
+                class="hover:text-brand-500 transition-colors"
+              >
+                Digital Services (Web, ERP, SEO)
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- =================================================
+             CONTACT INFORMATION
+        ================================================== -->
+
+        <div>
+
+          <h4
+            class="text-white font-semibold mb-3 sm:mb-4"
+          >
+            Contact Info
+          </h4>
+
+          <div class="space-y-3">
+
+            <!-- Phone -->
+
+            <p>
+              <a
+                href="tel:+917349667449"
+                class="flex items-start gap-2 hover:text-brand-500 transition-colors"
+              >
+                <span aria-hidden="true">📞</span>
+
+                <span>
+                  +91 7349667449
+                </span>
+
+              </a>
+            </p>
+
+            <!-- Email -->
+
+            <p>
+              <a
+                href="mailto:contact@cheetahgroups.com"
+                class="flex items-start gap-2 hover:text-brand-500 transition-colors break-all"
+              >
+
+                <span aria-hidden="true">✉️</span>
+
+                <span>
+                  contact@cheetahgroups.com
+                </span>
+
+              </a>
+            </p>
+
+            <!-- Address -->
+
+            <p class="flex items-start gap-2">
+
+              <span aria-hidden="true">📍</span>
+
+              <span>
+                Surya City Phase 1, Chandapura,
+                Anekal Taluka, Bangalore - 560099
+              </span>
+
+            </p>
+
+            <!-- Website -->
+
+            <a
+              href="https://www.cheetahgroups.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 hover:text-brand-500 transition-colors break-all"
+            >
+
+              <span aria-hidden="true">🌐</span>
+
+              <span>
+                www.cheetahgroups.in
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-center text-xs">
-        <p>© 2026 Cheetah groups. All Rights Reserved.</p>
+
+      <!-- ===================================================
+           COPYRIGHT
+      ==================================================== -->
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-center text-xs"
+      >
+
+        <p>
+          © 2026 Cheetah Groups. All Rights Reserved.
+        </p>
+
         <div class="flex gap-4">
-          <a href="#" class="hover:text-brand-500">Privacy Policy</a>
-          <a href="#" class="hover:text-brand-500">Terms &amp; Conditions</a>
+
+          <a
+            href="/privacy-policy"
+            class="hover:text-brand-500 transition-colors"
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            href="/terms"
+            class="hover:text-brand-500 transition-colors"
+          >
+            Terms &amp; Conditions
+          </a>
+
         </div>
+
       </div>
+
     </footer>
 
-    <script>
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
+    <!-- =====================================================
+         MOBILE MENU SCRIPT
+    ====================================================== -->
 
-      btn?.addEventListener('click', () => {
-        menu?.classList.toggle('hidden');
+    <script>
+      const btn =
+        document.getElementById("mobile-menu-btn");
+
+      const menu =
+        document.getElementById("mobile-menu");
+
+      btn?.addEventListener("click", () => {
+        menu?.classList.toggle("hidden");
+
+        const isOpen =
+          !menu?.classList.contains("hidden");
+
+        btn.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+      });
+
+      // Close menu after selecting a link
+
+      menu?.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          menu.classList.add("hidden");
+
+          btn?.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
       });
     </script>
+
   </body>
 </html>

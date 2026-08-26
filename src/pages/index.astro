@@ -48,9 +48,9 @@ const whyChoose = [
 
 const stats = [
   { value: "10+", label: "Years of Experience" },
-  { value: "500+", label: "Happy Clients" },
-  { value: "1000+", label: "Projects Completed" },
-  { value: "50+", label: "Skilled Employees" },
+  { value: "50+", label: "Happy Clients" },
+  { value: "100+", label: "Projects Completed" },
+  { value: "100+", label: "Skilled Man Power" },
 ];
 
 const process = [
@@ -59,6 +59,13 @@ const process = [
   { title: "Execution with Quality", icon: "⚙️" },
   { title: "Timely Delivery", icon: "🚚" },
   { title: "Client Satisfaction", icon: "🤝" },
+];
+
+const digitalServices = [
+  { title: "Website", icon: "🌐" },
+  { title: "Web & Desktop Application", icon: "💻" },
+  { title: "ERP Software", icon: "🗂️" },
+  { title: "SEO", icon: "📈" },
 ];
 
 const industries = [
@@ -73,7 +80,10 @@ const industries = [
 ];
 ---
 
-<Layout title="Home">
+<Layout
+  title="Manpower Staffing & Manufacturing Piece Work in Bangalore"
+  description="Cheetah Groups delivers manpower & staffing solutions, security staff supply, and manufacturing & engineering piece work (powder coating, bending, fabrication) in Bangalore — plus digital services: websites, web & desktop applications, ERP software and SEO."
+>
   <!-- Hero Section -->
   <section class="relative bg-slate-950 overflow-hidden">
     <!-- Home page hero background image, fitted full-bleed with a dark gradient so text stays readable -->
@@ -145,6 +155,27 @@ const industries = [
             <a href="/services" class="text-brand-400 font-bold text-sm hover:text-brand-300">EXPLORE MORE →</a>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Services -->
+  <section class="py-12 sm:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-wide">DIGITAL SERVICES</h2>
+      </div>
+      <p class="text-slate-400 text-sm text-center max-w-2xl mx-auto mb-8 sm:mb-12">We also help businesses go digital — websites, applications, ERP software and SEO, built and managed end-to-end.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        {digitalServices.map((d) => (
+          <a href="/services#digital-services" class="group bg-slate-900 border border-slate-800 hover:border-brand-500 rounded-xl p-6 text-center transition-all">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-slate-950 border border-slate-800 group-hover:border-brand-500 flex items-center justify-center text-2xl">{d.icon}</div>
+            <p class="text-slate-200 font-semibold text-xs sm:text-sm">{d.title}</p>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8 sm:mt-10">
+        <a href="/services#digital-services" class="inline-block bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded transition-all text-sm">Explore Digital Services →</a>
       </div>
     </div>
   </section>

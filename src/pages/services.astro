@@ -22,6 +22,13 @@ const hrServices = [
   { title: "Security Staff Supply", desc: "Professional and well-trained security staff to ensure safety and peace of mind.", items: ["Security Guards", "Supervisors", "CCTV Monitoring Staff", "24x7 Security Support"], img: IMG.security },
 ];
 
+const digitalServices = [
+  { title: "Website Design & Development", desc: "Fast, mobile-friendly business websites built to convert visitors into enquiries and showcase your brand professionally.", items: ["Custom Website Design", "E-commerce Websites", "CMS & Landing Pages", "Website Maintenance"], icon: "🌐" },
+  { title: "Web & Desktop Applications", desc: "Custom web and desktop software built around your exact business workflow — from internal tools to client-facing portals.", items: ["Web Applications", "Desktop Software", "API Integrations", "Cloud Deployment"], icon: "💻" },
+  { title: "ERP Software", desc: "End-to-end ERP systems to manage inventory, HR, payroll, production and finance from a single dashboard.", items: ["Inventory & Production", "HR & Payroll Modules", "Finance & Reporting", "Role-based Access"], icon: "🗂️" },
+  { title: "SEO Services", desc: "On-page, technical and local SEO to help your business get found on Google and rank above competitors.", items: ["Keyword Research", "On-Page & Technical SEO", "Local / Google Business SEO", "Monthly Rank Reporting"], icon: "📈" },
+];
+
 const payModels = [
   {
     title: "Straight Piece Rate",
@@ -41,13 +48,16 @@ const payModels = [
 ];
 ---
 
-<Layout title="Our Services">
+<Layout
+  title="Our Services"
+  description="Cheetah Groups services: powder coating, bending & fabrication piece work, manpower & security staffing, plus digital services — website development, web & desktop applications, ERP software and SEO. Serving Bangalore & across India."
+  keywords="powder coating piece work, bending piece work, fabrication piece work, manpower supply, security staffing, ERP software development, website development company Bangalore, SEO services Bangalore"
+>
   <!-- Page Header -->
   <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
     <div class="absolute inset-0 opacity-30 bg-cover bg-center" style={`background-image:url('${IMG.manufacturing}')`}></div>
     <div class="relative">
       <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">OUR SERVICES</h1>
-      <p class="text-slate-400 mt-3 text-sm"><a href="/" class="hover:text-brand-500">Home</a> &gt; Services</p>
     </div>
   </section>
 
@@ -86,6 +96,27 @@ const payModels = [
               {service.items.map((item) => <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">•</span> {item}</li>)}
             </ul>
           </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Digital Services -->
+  <section id="digital-services" class="pb-14 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <div class="flex items-center justify-center gap-3 mb-3">
+      <span class="flex items-center justify-center w-9 h-9 bg-brand-500 text-slate-950 rounded-md font-black text-sm shrink-0">CG</span>
+      <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-wide text-center">DIGITAL SERVICES</h2>
+    </div>
+    <p class="text-slate-500 text-sm text-center max-w-2xl mx-auto mb-10 sm:mb-12">Beyond the factory floor and workforce — we also help businesses go digital, from websites to enterprise software and search visibility.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      {digitalServices.map((service) => (
+        <div class="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all p-6 sm:p-7">
+          <div class="w-12 h-12 rounded-full bg-slate-950 text-brand-400 flex items-center justify-center text-xl mb-4">{service.icon}</div>
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
+          <p class="text-slate-500 text-xs sm:text-sm mb-4 leading-relaxed">{service.desc}</p>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+            {service.items.map((item) => <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">•</span> {item}</li>)}
+          </ul>
         </div>
       ))}
     </div>
