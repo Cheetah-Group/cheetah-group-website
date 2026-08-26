@@ -7,12 +7,20 @@ import Layout from '../layouts/Layout.astro';
   description="Contact Cheetah Groups in Bangalore for manpower & staffing, manufacturing piece work, or digital services. Call +91 7349667449 or visit us at Surya City Phase 1, Chandapura, Bangalore - 560099."
 >
   <!-- Page Header -->
-  <section class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1400&q=80')"></div>
-    <div class="relative">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">CONTACT US</h1>
-    </div>
-  </section>
+ <section class="relative h-[220px] sm:h-[280px] lg:h-[360px] overflow-hidden bg-slate-950">
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url('https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787739810/contact_us.png');"
+  ></div>
+
+  <div class="absolute inset-0 bg-slate-950/35"></div>
+
+  <div class="relative z-10 h-full flex items-center justify-center">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-wide">
+      CONTACT US
+    </h1>
+  </div>
+</section>
 
   <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14">
     <div>
@@ -108,33 +116,69 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement | null;
-    const status = document.getElementById('form-status');
-    const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
 
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!status || !btn) return;
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      status.textContent = '';
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!status || !btn) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    status.textContent = '';
+    status.className = 'text-sm font-medium mt-2 text-center';
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      let data;
 
       try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          body: new FormData(form),
-        });
-        const data = await res.json();
-        status.textContent = data.message;
-        status.className = res.ok ? 'text-sm font-medium mt-2 text-center text-brand-600' : 'text-sm font-medium mt-2 text-center text-red-600';
-        if (res.ok) form.reset();
-      } catch (err) {
-        status.textContent = 'Something went wrong. Please try again.';
-        status.className = 'text-sm font-medium mt-2 text-center text-red-600';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
+        data = await response.json();
+      } catch {
+        data = {
+          message: 'Unexpected server response. Please try again.',
+        };
       }
-    });
-  </script>
+
+      if (response.ok) {
+        status.textContent =
+          data.message ||
+          'Your inquiry has been sent successfully.';
+
+        status.className =
+          'text-sm font-medium mt-2 text-center text-green-600';
+
+        form.reset();
+      } else {
+        status.textContent =
+          data.message ||
+          'Failed to send your message. Please try again.';
+
+        status.className =
+          'text-sm font-medium mt-2 text-center text-red-600';
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+
+      status.textContent =
+        'Something went wrong. Please try again later.';
+
+      status.className =
+        'text-sm font-medium mt-2 text-center text-red-600';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+  });
+</script>
+
 </Layout>

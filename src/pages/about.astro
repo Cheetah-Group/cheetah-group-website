@@ -62,24 +62,30 @@ const team = [
   description="Learn about Cheetah Groups — a trusted Bangalore-based provider of manpower & staffing and manufacturing & engineering piece work since 2014, with a leadership team committed to quality, transparency and fair piece-rate pay."
 >
   <!-- =========================================================
-       Page Header
-  ========================================================== -->
-  <section
-    class="relative bg-slate-950 py-16 sm:py-20 text-center overflow-hidden"
-  >
-    <div
-      class="absolute inset-0 opacity-30 bg-cover bg-center"
-      style={`background-image:url('${IMG.aboutBg}')`}
-    ></div>
+     Page Header
+========================================================== -->
+<section
+  class="relative h-[220px] sm:h-[280px] lg:h-[360px] bg-slate-950 overflow-hidden"
+>
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style={`background-image:url('${IMG.aboutBg}')`}
+  ></div>
 
-    <div class="relative px-4">
-      <h1
-        class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide"
-      >
-        ABOUT US
-      </h1>
-    </div>
-  </section>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-slate-950/40"></div>
+
+  <!-- Heading -->
+  <div
+    class="relative z-10 h-full flex items-center justify-center px-4"
+  >
+    <h1
+      class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-wide"
+    >
+      ABOUT US
+    </h1>
+  </div>
+</section>
 
   <!-- =========================================================
        Who We Are

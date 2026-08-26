@@ -12,6 +12,7 @@
     "@astrojs/vercel": "^11.0.8",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.4",
+    "dotenv": "^17.4.2",
     "nodemailer": "^9.0.5",
     "tailwindcss": "^4.3.3"
   },
