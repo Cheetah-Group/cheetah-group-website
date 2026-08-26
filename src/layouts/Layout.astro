@@ -34,8 +34,8 @@ const businessSchema = {
   name: "Cheetah Groups",
   image: logoUrl,
   url: siteUrl,
-  telephone: "+91 7349667449",
-  email: "contact@cheetahgroups.com",
+  telephone: "+91 9036032390",
+  email: "contact@cheetahgroups.in",
   description,
   address: {
     "@type": "PostalAddress",
@@ -45,6 +45,7 @@ const businessSchema = {
     addressRegion: "Karnataka",
     addressCountry: "IN",
   },
+
   geo: {
     "@type": "GeoCoordinates",
     latitude: 12.792253,
@@ -71,6 +72,19 @@ const businessSchema = {
   },
   sameAs: ["https://www.cheetahgroups.in"],
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.cheetahgroups.in/#website",
+  name: "Cheetah Groups",
+  alternateName: [
+    "Cheetah Group",
+    "cheetahgroups",
+    "cheetahgroup",
+  ],
+  url: "https://www.cheetahgroups.in/",
+};
 ---
 
 <!doctype html>
@@ -78,10 +92,7 @@ const businessSchema = {
   <head>
     <meta charset="UTF-8" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="theme-color" content="#020617" />
 
@@ -130,12 +141,23 @@ const businessSchema = {
     <script
       type="application/ld+json"
       set:html={JSON.stringify(businessSchema)}
-    ></script>
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(websiteSchema)}
+    />
   </head>
 
-  <body class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen">
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between min-h-[64px]">
+  <body
+    class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen"
+  >
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between min-h-[64px]"
+      >
         <a
           href="/"
           class="flex items-center gap-2 shrink-0"
@@ -151,11 +173,15 @@ const businessSchema = {
           />
 
           <div class="flex items-baseline gap-1 leading-none whitespace-nowrap">
-            <span class="text-base sm:text-lg md:text-xl font-black tracking-wide text-yellow-500">
+            <span
+              class="text-base sm:text-lg md:text-xl font-black tracking-wide text-yellow-500"
+            >
               CHEETAH
             </span>
 
-            <span class="text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-[0.15em] text-slate-800">
+            <span
+              class="text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-[0.15em] text-slate-800"
+            >
               GROUPS
             </span>
           </div>
@@ -165,14 +191,16 @@ const businessSchema = {
           class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-600"
           aria-label="Main Navigation"
         >
-          {navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="hover:text-brand-600 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="hover:text-brand-600 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
         </nav>
 
         <div class="hidden lg:block">
@@ -203,8 +231,7 @@ const businessSchema = {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
@@ -217,14 +244,16 @@ const businessSchema = {
           class="max-w-7xl mx-auto px-4 sm:px-6 py-3"
           aria-label="Mobile Navigation"
         >
-          {navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="block py-3 px-2 text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-md font-semibold transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="block py-3 px-2 text-slate-600 hover:text-brand-600 hover:bg-slate-50 rounded-md font-semibold transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
 
           <a
             href="/contact"
@@ -240,8 +269,12 @@ const businessSchema = {
       <slot />
     </main>
 
-    <footer class="bg-slate-950 pt-12 sm:pt-16 pb-6 text-slate-400 text-xs sm:text-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10">
+    <footer
+      class="bg-slate-950 pt-12 sm:pt-16 pb-6 text-slate-400 text-xs sm:text-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10"
+      >
         <div>
           <div class="inline-flex items-center bg-white rounded-lg p-2 mb-4">
             <img
@@ -260,50 +293,77 @@ const businessSchema = {
               CHEETAH
             </span>
 
-            <span class="text-[10px] font-semibold tracking-[0.15em] text-white">
+            <span
+              class="text-[10px] font-semibold tracking-[0.15em] text-white"
+            >
               GROUPS
             </span>
           </div>
 
           <p class="leading-relaxed">
             Precision in every piece, expertise in every hire. Manpower &
-            staffing and manufacturing & engineering piece work, under one
-            roof.
+            staffing and manufacturing & engineering piece work, under one roof.
           </p>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-3 sm:mb-4">
-            Quick Links
-          </h4>
+          <h4 class="text-white font-semibold mb-3 sm:mb-4">Quick Links</h4>
 
           <ul class="space-y-2">
-            <li><a href="/" class="hover:text-brand-500 transition-colors">Home</a></li>
-            <li><a href="/services" class="hover:text-brand-500 transition-colors">Services</a></li>
-            <li><a href="/about" class="hover:text-brand-500 transition-colors">About Us</a></li>
-            <li><a href="/contact" class="hover:text-brand-500 transition-colors">Contact Us</a></li>
+            <li>
+              <a href="/" class="hover:text-brand-500 transition-colors"
+                >Home</a>
+            </li>
+            <li>
+              <a href="/services" class="hover:text-brand-500 transition-colors"
+                >Services</a>
+            </li>
+            <li>
+              <a href="/about" class="hover:text-brand-500 transition-colors"
+                >About Us</a>
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-brand-500 transition-colors"
+                >Contact Us</a>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-3 sm:mb-4">
-            Our Services
-          </h4>
+          <h4 class="text-white font-semibold mb-3 sm:mb-4">Our Services</h4>
 
           <ul class="space-y-2">
-            <li><a href="/services" class="hover:text-brand-500 transition-colors">Powder Coating Piece Work</a></li>
-            <li><a href="/services" class="hover:text-brand-500 transition-colors">Bending Piece Work</a></li>
-            <li><a href="/services" class="hover:text-brand-500 transition-colors">Fabrication Piece Work</a></li>
-            <li><a href="/services" class="hover:text-brand-500 transition-colors">Manpower Supply</a></li>
-            <li><a href="/services" class="hover:text-brand-500 transition-colors">Security Staff Supply</a></li>
-            <li><a href="/services#digital-services" class="hover:text-brand-500 transition-colors">Digital Services</a></li>
+            <li>
+              <a href="/services" class="hover:text-brand-500 transition-colors"
+                >Powder Coating Piece Work</a>
+            </li>
+            <li>
+              <a href="/services" class="hover:text-brand-500 transition-colors"
+                >Bending Piece Work</a>
+            </li>
+            <li>
+              <a href="/services" class="hover:text-brand-500 transition-colors"
+                >Fabrication Piece Work</a>
+            </li>
+            <li>
+              <a href="/services" class="hover:text-brand-500 transition-colors"
+                >Manpower Supply</a>
+            </li>
+            <li>
+              <a href="/services" class="hover:text-brand-500 transition-colors"
+                >Security Staff Supply</a>
+            </li>
+            <li>
+              <a
+                href="/services#digital-services"
+                class="hover:text-brand-500 transition-colors"
+                >Digital Services</a>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-3 sm:mb-4">
-            Contact Info
-          </h4>
+          <h4 class="text-white font-semibold mb-3 sm:mb-4">Contact Info</h4>
 
           <div class="space-y-3">
             <a
@@ -325,8 +385,8 @@ const businessSchema = {
             <p class="flex items-start gap-2">
               <span aria-hidden="true">📍</span>
               <span>
-                Surya City Phase 1, Chandapura, Anekal Taluka,
-                Bangalore - 560099
+                Surya City Phase 1, Chandapura, Anekal Taluka, Bangalore -
+                560099
               </span>
             </p>
 
@@ -343,11 +403,16 @@ const businessSchema = {
         </div>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-center text-xs">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-center text-xs"
+      >
         <p>© 2026 Cheetah Groups. All Rights Reserved.</p>
 
         <div class="flex gap-4">
-          <a href="/privacy-policy" class="hover:text-brand-500 transition-colors">
+          <a
+            href="/privacy-policy"
+            class="hover:text-brand-500 transition-colors"
+          >
             Privacy Policy
           </a>
 
