@@ -1,184 +1,323 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+const contactImage =
+  "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787739810/contact_us.png";
 ---
 
 <Layout
-  title="Contact Us"
-  description="Contact Cheetah Groups in Bangalore for manpower & staffing, manufacturing piece work, or digital services. Call +91 7349667449 or visit us at Surya City Phase 1, Chandapura, Bangalore - 560099."
+  title="Contact Cheetah Groups"
+  description="Contact Cheetah Groups in Bangalore for manpower and staffing, manufacturing and engineering piece work, powder coating, bending, fabrication, security staffing and digital services. Call +91 7349667449."
+  keywords="contact Cheetah Groups, Cheetah Groups Bangalore contact, manpower supply Bangalore, staffing Bangalore, manufacturing piece work Bangalore, security staff Bangalore"
 >
-  <!-- Page Header -->
- <section class="relative h-[220px] sm:h-[280px] lg:h-[360px] overflow-hidden bg-slate-950">
-  <div
-    class="absolute inset-0 bg-cover bg-center"
-    style="background-image: url('https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787739810/contact_us.png');"
-  ></div>
+  <section class="relative h-[220px] sm:h-[280px] lg:h-[360px] overflow-hidden bg-slate-950">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style={`background-image:url('${contactImage}')`}
+    ></div>
 
-  <div class="absolute inset-0 bg-slate-950/35"></div>
+    <div class="absolute inset-0 bg-slate-950/35"></div>
 
-  <div class="relative z-10 h-full flex items-center justify-center">
-    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-wide">
-      CONTACT US
-    </h1>
-  </div>
-</section>
+    <div class="relative z-10 h-full flex items-center justify-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-wide">
+        CONTACT US
+      </h1>
+    </div>
+  </section>
 
   <section class="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14">
     <div>
-      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 sm:mb-6 tracking-wide">GET IN TOUCH</h2>
-      <p class="text-slate-500 text-sm sm:text-base mb-8">We are here to help you. Reach out to us for any enquiries or quotation.</p>
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 sm:mb-6 tracking-wide">
+        GET IN TOUCH
+      </h2>
+
+      <p class="text-slate-500 text-sm sm:text-base mb-8">
+        We are here to help you. Reach out to us for enquiries, quotations
+        and service requirements.
+      </p>
 
       <div class="space-y-6 text-sm sm:text-base">
         <div class="flex items-start gap-4">
-          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">📞</span>
+          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+            📞
+          </span>
+
           <div>
             <p class="font-semibold text-slate-900">Phone</p>
-            <p class="text-slate-500">+91 7349667449</p>
-            <p class="text-slate-500">+91 8217802342</p>
-              <p class="text-slate-500">+91 9036032390</p>
+
+            <a
+              href="tel:+917349667449"
+              class="block text-slate-500 hover:text-brand-600"
+            >
+              +91 7349667449
+            </a>
+
+            <a
+              href="tel:+918217802342"
+              class="block text-slate-500 hover:text-brand-600"
+            >
+              +91 8217802342
+            </a>
+
+            <a
+              href="tel:+919036032390"
+              class="block text-slate-500 hover:text-brand-600"
+            >
+              +91 9036032390
+            </a>
           </div>
         </div>
+
         <div class="flex items-start gap-4">
-          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">✉️</span>
+          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+            ✉️
+          </span>
+
           <div>
             <p class="font-semibold text-slate-900">Email</p>
-            <p class="text-slate-500 break-all">contact@cheetahgroups.com</p>
+
+            <a
+              href="mailto:contact@cheetahgroups.com"
+              class="text-slate-500 hover:text-brand-600 break-all"
+            >
+              contact@cheetahgroups.com
+            </a>
           </div>
         </div>
+
         <div class="flex items-start gap-4">
-          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">📍</span>
+          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+            📍
+          </span>
+
           <div>
             <p class="font-semibold text-slate-900">Address</p>
-            <p class="text-slate-500">Surya City Phase 1, Chandapura, Anekal Taluka, <br />Bangalore - 560099</p>
+
+            <p class="text-slate-500">
+              Surya City Phase 1, Chandapura, Anekal Taluka,
+              <br />
+              Bangalore - 560099
+            </p>
           </div>
         </div>
+
         <div class="flex items-start gap-4">
-          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">🕒</span>
+          <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+            🕒
+          </span>
+
           <div>
             <p class="font-semibold text-slate-900">Working Hours</p>
-            <p class="text-slate-500">Mon - Sat: 9:00 AM - 6:00 PM</p>
-            <p class="text-slate-500">Sunday: Closed</p>
+
+            <p class="text-slate-500">
+              Mon - Sat: 9:00 AM - 6:00 PM
+            </p>
+
+            <p class="text-slate-500">
+              Sunday: Closed
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Contact Form -->
     <div class="bg-slate-50 border border-slate-100 p-6 sm:p-8 rounded-xl">
-      <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-6">SEND US A MESSAGE</h3>
+      <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-6">
+        SEND US A MESSAGE
+      </h3>
 
       <form id="contact-form" class="space-y-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="name" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Name</label>
-            <input type="text" id="name" name="name" required class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500" />
+            <label
+              for="name"
+              class="block text-xs font-semibold uppercase text-slate-500 mb-1"
+            >
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+              class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500"
+            />
           </div>
+
           <div>
-            <label for="email" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Email</label>
-            <input type="email" id="email" name="email" required class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500" />
+            <label
+              for="email"
+              class="block text-xs font-semibold uppercase text-slate-500 mb-1"
+            >
+              Your Email
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500"
+            />
           </div>
-        </div>
-        <div>
-          <label for="phone" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Phone</label>
-          <input type="text" id="phone" name="phone" class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500" />
-        </div>
-        <div>
-          <label for="subject" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Subject</label>
-          <input type="text" id="subject" name="subject" class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500" />
-        </div>
-        <div>
-          <label for="message" class="block text-xs font-semibold uppercase text-slate-500 mb-1">Your Message</label>
-          <textarea id="message" name="message" rows="4" required class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500"></textarea>
         </div>
 
-        <button type="submit" id="submit-btn" class="w-full bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-3 rounded text-sm sm:text-base transition-all">
+        <div>
+          <label
+            for="phone"
+            class="block text-xs font-semibold uppercase text-slate-500 mb-1"
+          >
+            Your Phone
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+            class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500"
+          />
+        </div>
+
+        <div>
+          <label
+            for="subject"
+            class="block text-xs font-semibold uppercase text-slate-500 mb-1"
+          >
+            Subject
+          </label>
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500"
+          />
+        </div>
+
+        <div>
+          <label
+            for="message"
+            class="block text-xs font-semibold uppercase text-slate-500 mb-1"
+          >
+            Your Message
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="w-full bg-white border border-slate-200 rounded p-3 text-slate-900 text-sm focus:outline-none focus:border-brand-500"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-3 rounded text-sm sm:text-base transition-all"
+        >
           Send Message
         </button>
-        <p id="form-status" class="text-sm font-medium mt-2 text-center"></p>
+
+        <p
+          id="form-status"
+          class="text-sm font-medium mt-2 text-center"
+          aria-live="polite"
+        ></p>
       </form>
     </div>
   </section>
 
-  <!-- Map + Bottom CTA -->
-  <section class="relative">
-  <iframe
-    title="Cheetah Groups Location"
-    class="w-full h-72 sm:h-96 border-0 grayscale-[20%]"
-    loading="lazy"
-    src="https://www.google.com/maps?q=12.792253,77.701630&z=16&output=embed"
-  >
-  </iframe>
-</section>
+  <section>
+    <iframe
+      title="Cheetah Groups location in Bangalore"
+      class="w-full h-72 sm:h-96 border-0 grayscale-[20%]"
+      loading="lazy"
+      src="https://www.google.com/maps?q=12.792253,77.701630&z=16&output=embed"
+      allowfullscreen
+    ></iframe>
+  </section>
+
   <section class="bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <p class="text-white font-semibold text-center sm:text-left">We look forward to building a long term relationship with you.</p>
-      <a href="/contact" class="whitespace-nowrap bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded transition-all text-sm">Get a Free Quote</a>
+      <p class="text-white font-semibold text-center sm:text-left">
+        We look forward to building a long-term relationship with you.
+      </p>
+
+      <a
+        href="/contact"
+        class="whitespace-nowrap bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded transition-all text-sm"
+      >
+        Get a Free Quote
+      </a>
     </div>
   </section>
 
   <script>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  const status = document.getElementById('form-status');
-  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    const status = document.getElementById("form-status");
+    const btn = document.getElementById("submit-btn") as HTMLButtonElement | null;
 
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    form?.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-    if (!status || !btn) return;
+      if (!status || !btn) return;
 
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
+      btn.disabled = true;
+      btn.textContent = "Sending...";
 
-    status.textContent = '';
-    status.className = 'text-sm font-medium mt-2 text-center';
-
-    try {
-      const formData = new FormData(form);
-
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        body: formData,
-      });
-
-      let data;
+      status.textContent = "";
+      status.className = "text-sm font-medium mt-2 text-center";
 
       try {
-        data = await response.json();
-      } catch {
-        data = {
-          message: 'Unexpected server response. Please try again.',
-        };
-      }
+        const formData = new FormData(form);
 
-      if (response.ok) {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          body: formData,
+        });
+
+        let data: { message?: string };
+
+        try {
+          data = await response.json();
+        } catch {
+          data = {
+            message: "Unexpected server response. Please try again.",
+          };
+        }
+
+        if (response.ok) {
+          status.textContent =
+            data.message || "Your inquiry has been sent successfully.";
+
+          status.className =
+            "text-sm font-medium mt-2 text-center text-green-600";
+
+          form.reset();
+        } else {
+          status.textContent =
+            data.message || "Failed to send your message. Please try again.";
+
+          status.className =
+            "text-sm font-medium mt-2 text-center text-red-600";
+        }
+      } catch (error) {
+        console.error("Contact form error:", error);
+
         status.textContent =
-          data.message ||
-          'Your inquiry has been sent successfully.';
+          "Something went wrong. Please try again later.";
 
         status.className =
-          'text-sm font-medium mt-2 text-center text-green-600';
-
-        form.reset();
-      } else {
-        status.textContent =
-          data.message ||
-          'Failed to send your message. Please try again.';
-
-        status.className =
-          'text-sm font-medium mt-2 text-center text-red-600';
+          "text-sm font-medium mt-2 text-center text-red-600";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Send Message";
       }
-    } catch (error) {
-      console.error('Contact form error:', error);
-
-      status.textContent =
-        'Something went wrong. Please try again later.';
-
-      status.className =
-        'text-sm font-medium mt-2 text-center text-red-600';
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
-    }
-  });
-</script>
-
+    });
+  </script>
 </Layout>

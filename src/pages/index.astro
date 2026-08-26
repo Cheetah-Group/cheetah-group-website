@@ -1,24 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const IMG = {
-  manufacturing: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419960/industrial_manufacturimg_and_engineering_pice_work.png",
-  powderCoating: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto//v1787419962/powder_coating.png",
-  bending: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419964/bending.png",
-  security: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/security_gurd_stafing.png",
-  manpower: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/manpower.png",
-  aboutBg: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/about_us_background_image.png",
-  homeBg: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419967/home_page_background_image.png",
-  hrManagement: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419967/human_resource_management_image.png",
-  fabrication: "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419966/fabrication.png",
+  manufacturing:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419960/industrial_manufacturimg_and_engineering_pice_work.png",
+  powderCoating:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419962/powder_coating.png",
+  bending:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419964/bending.png",
+  security:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/security_gurd_stafing.png",
+  manpower:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/manpower.png",
+  aboutBg:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419965/about_us_background_image.png",
+  homeBg:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419967/home_page_background_image.png",
+  hrManagement:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419967/human_resource_management_image.png",
+  fabrication:
+    "https://res.cloudinary.com/clsewnkk/image/upload/f_auto,q_auto/v1787419966/fabrication.png",
 };
 
 const trustPoints = [
-  { title: "Quality You Can Trust", desc: "Strict quality control at every process.", icon: "🛡️" },
-  { title: "On-Time Delivery", desc: "We value time and deliver on schedule.", icon: "⏱️" },
-  { title: "Skilled Professionals", desc: "Experienced team with advanced expertise.", icon: "👷" },
-  { title: "Cost Effective", desc: "Best solutions at competitive prices.", icon: "💰" },
-  { title: "Customer First Approach", desc: "Your satisfaction is our top priority.", icon: "⭐" },
+  {
+    title: "Quality You Can Trust",
+    desc: "Strict quality control at every process.",
+    icon: "🛡️",
+  },
+  {
+    title: "On-Time Delivery",
+    desc: "We value time and deliver on schedule.",
+    icon: "⏱️",
+  },
+  {
+    title: "Skilled Professionals",
+    desc: "Experienced team with advanced expertise.",
+    icon: "👷",
+  },
+  {
+    title: "Cost Effective",
+    desc: "Best solutions at competitive prices.",
+    icon: "💰",
+  },
+  {
+    title: "Customer First Approach",
+    desc: "Your satisfaction is our top priority.",
+    icon: "⭐",
+  },
 ];
 
 const categories = [
@@ -26,15 +55,23 @@ const categories = [
     title: "MANUFACTURING & ENGINEERING PIECE WORK",
     desc: "Precision powder coating, welding, bending and fabrication piece work delivered with speed and accuracy.",
     img: IMG.manufacturing,
-    dark: true,
-    items: ["Powder Coating Piece Work", "Welding Piece Work", "Bending Piece Work", "Fabrication Piece Work"],
+    items: [
+      "Powder Coating Piece Work",
+      "Welding Piece Work",
+      "Bending Piece Work",
+      "Fabrication Piece Work",
+    ],
   },
   {
     title: "MANPOWER & STAFFING",
     desc: "Skilled, semi-skilled and security manpower, supplied and managed end-to-end for your operations.",
     img: IMG.hrManagement,
-    dark: false,
-    items: ["Manpower Supply", "Security Staff Supply", "Contract & Temporary Staffing", "Payroll & Compliance"],
+    items: [
+      "Manpower Supply",
+      "Security Staff Supply",
+      "Contract & Temporary Staffing",
+      "Payroll & Compliance",
+    ],
   },
 ];
 
@@ -50,7 +87,7 @@ const stats = [
   { value: "10+", label: "Years of Experience" },
   { value: "50+", label: "Happy Clients" },
   { value: "100+", label: "Projects Completed" },
-  { value: "150+", label: "Skilled Man Power" },
+  { value: "150+", label: "Skilled Manpower" },
 ];
 
 const process = [
@@ -62,10 +99,10 @@ const process = [
 ];
 
 const digitalServices = [
-  { title: "Website", icon: "🌐" },
-  { title: "Web & Desktop Application", icon: "💻" },
+  { title: "Website Development", icon: "🌐" },
+  { title: "Web & Desktop Applications", icon: "💻" },
   { title: "ERP Software", icon: "🗂️" },
-  { title: "SEO", icon: "📈" },
+  { title: "SEO Services", icon: "📈" },
 ];
 
 const industries = [
@@ -82,132 +119,225 @@ const industries = [
 
 <Layout
   title="Manpower Staffing & Manufacturing Piece Work in Bangalore"
-  description="Cheetah Groups delivers manpower & staffing solutions, security staff supply, and manufacturing & engineering piece work (powder coating, bending, fabrication) in Bangalore — plus digital services: websites, web & desktop applications, ERP software and SEO."
+  description="Cheetah Groups provides manpower and staffing solutions, security staff supply, manufacturing and engineering piece work, powder coating, bending, fabrication, website development, applications, ERP software and SEO services in Bangalore."
+  keywords="manpower supply Bangalore, staffing solutions Bangalore, security staff Bangalore, manufacturing piece work Bangalore, engineering piece work, powder coating piece work, bending piece work, fabrication piece work, website development Bangalore, ERP software Bangalore, SEO services Bangalore"
 >
-  <!-- Hero Section -->
   <section class="relative bg-slate-950 overflow-hidden">
-    <!-- Home page hero background image, fitted full-bleed with a dark gradient so text stays readable -->
     <div
       class="absolute inset-0 bg-cover bg-center"
       style={`background-image:url('${IMG.homeBg}')`}
     ></div>
+
     <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-28 lg:py-36">
       <div class="max-w-2xl text-center lg:text-left">
-        <p class="text-brand-400 font-bold tracking-[0.2em] text-xs sm:text-sm mb-3">PRECISION IN EVERY PIECE. EXPERTISE IN EVERY HIRE.</p>
-        <h1 class="text-3xl sm:text-5xl lg:text-[3.2rem] font-black text-white leading-tight mb-4 sm:mb-6">
-          PRECISION WORK POWERED BY <span class="text-brand-400">EXPERTS</span>, PEOPLE &amp; <span class="text-brand-400">TECHNOLOGY</span>
-        </h1>
-        <p class="text-slate-300 text-sm sm:text-lg mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-          Cheetah Group delivers manpower &amp; staffing solutions alongside manufacturing &amp; engineering piece work — for a stronger tomorrow.
+        <p class="text-brand-400 font-bold tracking-[0.2em] text-xs sm:text-sm mb-3">
+          PRECISION IN EVERY PIECE. EXPERTISE IN EVERY HIRE.
         </p>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-[3.2rem] font-black text-white leading-tight mb-4 sm:mb-6">
+          PRECISION WORK POWERED BY
+          <span class="text-brand-400">EXPERTS</span>,
+          PEOPLE &amp;
+          <span class="text-brand-400">TECHNOLOGY</span>
+        </h1>
+
+        <p class="text-slate-300 text-sm sm:text-lg mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          Cheetah Groups delivers manpower and staffing solutions alongside
+          manufacturing and engineering piece work for a stronger tomorrow.
+        </p>
+
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-10 sm:mb-14">
-          <a href="/services" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded text-center transition-all">Our Services</a>
-          <a href="/contact" class="w-full sm:w-auto border border-slate-500 hover:border-brand-400 hover:text-brand-400 text-white font-semibold px-6 py-3 rounded text-center transition-all">Contact Us →</a>
+          <a
+            href="/services"
+            class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded text-center transition-all"
+          >
+            Our Services
+          </a>
+
+          <a
+            href="/contact"
+            class="w-full sm:w-auto border border-slate-500 hover:border-brand-400 hover:text-brand-400 text-white font-semibold px-6 py-3 rounded text-center transition-all"
+          >
+            Contact Us →
+          </a>
         </div>
+
         <div class="grid grid-cols-4 gap-4 sm:gap-6 border-t border-slate-700/70 pt-6 max-w-xl">
           {stats.map((s) => (
-            <div><div class="text-lg sm:text-2xl font-extrabold text-brand-400">{s.value}</div><div class="text-[10px] sm:text-xs text-slate-300 mt-1">{s.label}</div></div>
+            <div>
+              <div class="text-lg sm:text-2xl font-extrabold text-brand-400">
+                {s.value}
+              </div>
+
+              <div class="text-[10px] sm:text-xs text-slate-300 mt-1">
+                {s.label}
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </div>
 
-    <!-- Trust row (relative + solid bg so it sits above the hero background image, not on top of it) -->
     <div class="relative z-10 bg-slate-50 border-t border-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-4 text-center">
         {trustPoints.map((t) => (
           <div>
             <div class="text-2xl mb-2">{t.icon}</div>
-            <p class="text-slate-900 font-bold text-xs sm:text-sm">{t.title}</p>
-            <p class="text-slate-500 text-[11px] sm:text-xs mt-1 hidden sm:block">{t.desc}</p>
+
+            <p class="text-slate-900 font-bold text-xs sm:text-sm">
+              {t.title}
+            </p>
+
+            <p class="text-slate-500 text-[11px] sm:text-xs mt-1 hidden sm:block">
+              {t.desc}
+            </p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Main Categories -->
   <section class="py-12 sm:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-center gap-4 mb-8 sm:mb-12">
-        <span class="h-px w-10 bg-brand-500"></span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">OUR MAIN CATEGORIES</h2>
-        <span class="h-px w-10 bg-brand-500"></span>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-        {categories.map((cat) => (
-          <div
-            class={`relative p-6 sm:p-10 rounded-xl overflow-hidden bg-cover bg-center ${cat.dark ? 'text-white' : 'text-white'}`}
-            style={`background-image:linear-gradient(rgba(2,6,23,.88),rgba(2,6,23,.82)), url('${cat.img}')`}
-          >
-            <h3 class="text-xl sm:text-2xl font-bold mt-2 mb-3">{cat.title}</h3>
-            <p class="text-slate-200 text-sm mb-5 max-w-sm">{cat.desc}</p>
-            <ul class="space-y-2 mb-6">
-              {cat.items.map((item) => (
-                <li class="flex items-center gap-2 text-sm text-slate-100">
-                  <span class="text-brand-400 font-bold">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-            <a href="/services" class="text-brand-400 font-bold text-sm hover:text-brand-300">EXPLORE MORE →</a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-center gap-4 mb-8 sm:mb-12">
+      <span class="h-px w-10 bg-brand-500"></span>
 
-  <!-- Digital Services -->
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">
+        OUR MAIN CATEGORIES
+      </h2>
+
+      <span class="h-px w-10 bg-brand-500"></span>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+      {categories.map((cat) => (
+        <a
+          href={
+            cat.title === "MANUFACTURING & ENGINEERING PIECE WORK"
+              ? "/services"
+              : "/services#manpower-staffing"
+          }
+          class="group relative block p-6 sm:p-10 rounded-xl overflow-hidden bg-cover bg-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-500"
+          style={`background-image:linear-gradient(rgba(2,6,23,.88),rgba(2,6,23,.82)), url('${cat.img}')`}
+        >
+          <h3 class="text-xl sm:text-2xl font-bold mt-2 mb-3 group-hover:text-brand-400 transition-colors">
+            {cat.title}
+          </h3>
+
+          <p class="text-slate-200 text-sm mb-5 max-w-sm">
+            {cat.desc}
+          </p>
+
+          <ul class="space-y-2 mb-6">
+            {cat.items.map((item) => (
+              <li class="flex items-center gap-2 text-sm text-slate-100">
+                <span class="text-brand-400 font-bold">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <span class="text-brand-400 font-bold text-sm group-hover:text-brand-300 transition-colors">
+            EXPLORE MORE →
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
   <section class="py-12 sm:py-20 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-center gap-3 mb-3">
-        <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-wide">DIGITAL SERVICES</h2>
-      </div>
-      <p class="text-slate-400 text-sm text-center max-w-2xl mx-auto mb-8 sm:mb-12">We also help businesses go digital — websites, applications, ERP software and SEO, built and managed end-to-end.</p>
+      <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-wide text-center">
+        DIGITAL SERVICES
+      </h2>
+
+      <p class="text-slate-400 text-sm text-center max-w-2xl mx-auto mb-8 sm:mb-12 mt-3">
+        We help businesses go digital with websites, applications, ERP
+        software and SEO built and managed end-to-end.
+      </p>
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {digitalServices.map((d) => (
-          <a href="/services#digital-services" class="group bg-slate-900 border border-slate-800 hover:border-brand-500 rounded-xl p-6 text-center transition-all">
-            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-slate-950 border border-slate-800 group-hover:border-brand-500 flex items-center justify-center text-2xl">{d.icon}</div>
-            <p class="text-slate-200 font-semibold text-xs sm:text-sm">{d.title}</p>
+          <a
+            href="/services#digital-services"
+            class="group bg-slate-900 border border-slate-800 hover:border-brand-500 rounded-xl p-6 text-center transition-all"
+          >
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-slate-950 border border-slate-800 group-hover:border-brand-500 flex items-center justify-center text-2xl">
+              {d.icon}
+            </div>
+
+            <p class="text-slate-200 font-semibold text-xs sm:text-sm">
+              {d.title}
+            </p>
           </a>
         ))}
       </div>
+
       <div class="text-center mt-8 sm:mt-10">
-        <a href="/services#digital-services" class="inline-block bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded transition-all text-sm">Explore Digital Services →</a>
+        <a
+          href="/services#digital-services"
+          class="inline-block bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-6 py-3 rounded transition-all text-sm"
+        >
+          Explore Digital Services →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
   <section class="py-14 sm:py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-center gap-4 mb-10 sm:mb-14">
         <span class="h-px w-10 bg-brand-500"></span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">WHY CHOOSE US?</h2>
+
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">
+          WHY CHOOSE US?
+        </h2>
+
         <span class="h-px w-10 bg-brand-500"></span>
       </div>
+
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <div class="rounded-xl overflow-hidden border border-slate-100 shadow-sm order-2 lg:order-1">
-          <img src={IMG.aboutBg} alt="Cheetah Group team" class="w-full h-72 sm:h-96 object-cover" />
+          <img
+            src={IMG.aboutBg}
+            alt="Cheetah Groups team and facility"
+            class="w-full h-72 sm:h-96 object-cover"
+            loading="lazy"
+          />
         </div>
+
         <div class="order-1 lg:order-2">
           <ul class="space-y-4 mb-8">
             {whyChoose.map((w) => (
               <li class="flex items-center gap-3 text-slate-700 font-semibold text-sm sm:text-base">
-                <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-xs shrink-0">✓</span>
+                <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-xs shrink-0">
+                  ✓
+                </span>
+
                 {w}
               </li>
             ))}
           </ul>
+
           <div class="bg-white border border-slate-100 rounded-xl p-6 shadow-sm">
-            <p class="text-xs font-bold tracking-widest text-brand-600 mb-4">OUR ACHIEVEMENTS</p>
+            <p class="text-xs font-bold tracking-widest text-brand-600 mb-4">
+              OUR ACHIEVEMENTS
+            </p>
+
             <div class="grid grid-cols-2 gap-6">
               {stats.map((s) => (
                 <div>
-                  <div class="text-xl sm:text-2xl font-extrabold text-slate-900">{s.value}</div>
-                  <div class="text-xs text-slate-500 mt-1">{s.label}</div>
+                  <div class="text-xl sm:text-2xl font-extrabold text-slate-900">
+                    {s.value}
+                  </div>
+
+                  <div class="text-xs text-slate-500 mt-1">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -217,40 +347,61 @@ const industries = [
     </div>
   </section>
 
-  <!-- Industries -->
   <section id="industries" class="py-14 sm:py-20 bg-white scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-center gap-4 mb-10 sm:mb-14">
         <span class="h-px w-10 bg-brand-500"></span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">INDUSTRIES WE SERVE</h2>
+
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">
+          INDUSTRIES WE SERVE
+        </h2>
+
         <span class="h-px w-10 bg-brand-500"></span>
       </div>
+
       <div class="grid grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6">
         {industries.map((ind) => (
           <div class="flex flex-col items-center gap-2 text-center">
-            <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl">{ind.icon}</div>
-            <p class="text-slate-600 text-[11px] sm:text-xs font-semibold">{ind.name}</p>
+            <div class="w-14 h-14 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl">
+              {ind.icon}
+            </div>
+
+            <p class="text-slate-600 text-[11px] sm:text-xs font-semibold">
+              {ind.name}
+            </p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Our Work Process -->
   <section class="py-14 sm:py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-center gap-4 mb-10 sm:mb-14">
         <span class="h-px w-10 bg-brand-500"></span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">OUR WORK PROCESS</h2>
+
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide">
+          OUR WORK PROCESS
+        </h2>
+
         <span class="h-px w-10 bg-brand-500"></span>
       </div>
+
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 sm:gap-4 relative">
         {process.map((p, i) => (
           <div class="text-center relative">
-            <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white border-2 border-brand-500 flex items-center justify-center text-2xl shadow-sm">{p.icon}</div>
-            <p class="text-slate-700 font-semibold text-xs sm:text-sm">{p.title}</p>
+            <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white border-2 border-brand-500 flex items-center justify-center text-2xl shadow-sm">
+              {p.icon}
+            </div>
+
+            <p class="text-slate-700 font-semibold text-xs sm:text-sm">
+              {p.title}
+            </p>
+
             {i < process.length - 1 && (
-              <span class="hidden sm:block absolute top-8 left-1/2 w-full text-brand-400 text-lg">→</span>
+              <span class="hidden sm:block absolute top-8 left-1/2 w-full text-brand-400 text-lg">
+                →
+              </span>
             )}
           </div>
         ))}
@@ -258,25 +409,44 @@ const industries = [
     </div>
   </section>
 
-  <!-- Piece Rate teaser -->
   <section class="py-14 sm:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide mb-4">FAIR, TRANSPARENT PIECE-RATE PAY</h2>
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-wide mb-4">
+        FAIR, TRANSPARENT PIECE-RATE PAY
+      </h2>
+
       <p class="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-        Every piece-work engagement we run is built on clear per-unit rates, performance incentives and minimum-wage protection for every worker.
+        Every piece-work engagement we run is built on clear per-unit rates,
+        performance incentives and minimum-wage protection for every worker.
       </p>
-      <a href="/services#pay-structure" class="inline-block bg-slate-950 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded transition-all text-sm">See How Piece-Rate Pay Works →</a>
+
+      <a
+        href="/services#pay-structure"
+        class="inline-block bg-slate-950 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded transition-all text-sm"
+      >
+        See How Piece-Rate Pay Works →
+      </a>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="bg-brand-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="text-center sm:text-left">
-        <h2 class="text-lg sm:text-xl font-bold text-slate-950">Have a Project in Mind?</h2>
-        <p class="text-slate-800 text-sm">Share your requirements and we'll get back to you with the best solution.</p>
+        <h2 class="text-lg sm:text-xl font-bold text-slate-950">
+          Have a Project in Mind?
+        </h2>
+
+        <p class="text-slate-800 text-sm">
+          Share your requirements and we'll get back to you with the best solution.
+        </p>
       </div>
-      <a href="/contact" class="whitespace-nowrap bg-slate-950 hover:bg-slate-900 text-white font-bold px-6 py-3 rounded transition-all text-sm">Get a Free Quote</a>
+
+      <a
+        href="/contact"
+        class="whitespace-nowrap bg-slate-950 hover:bg-slate-900 text-white font-bold px-6 py-3 rounded transition-all text-sm"
+      >
+        Get a Free Quote
+      </a>
     </div>
   </section>
 </Layout>
